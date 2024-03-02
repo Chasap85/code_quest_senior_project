@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0r0d77qrtml7"]
+
+[ext_resource type="Texture2D" uid="uid://bwea8r34ckna" path="res://graphics/characters/travelers/wizard-hand-animation/wizard-hand-2.png" id="1_nwq1f"]
+[ext_resource type="Texture2D" uid="uid://dlsn1aam8s6g" path="res://graphics/characters/travelers/wizard-hand-animation/wizard.png" id="2_2ywed"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_217on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nwq1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2ywed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(730, 544)
+sprite_frames = SubResource("SpriteFrames_217on")
+frame = 1
+frame_progress = 0.276483
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
