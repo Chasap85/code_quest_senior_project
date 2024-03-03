@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clsfckbcebatc"
-path="res://.godot/imported/cyberpunk-city.jpg-9589a4859be04ee086c453f3589f32bf.ctex"
+uid="uid://bbwu7e43bc6yq"
+path="res://.godot/imported/desert-ruin.jpg-1bc7558f8a8996470fad9d63e0792485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/cyberpunk-city.jpg"
-dest_files=["res://.godot/imported/cyberpunk-city.jpg-9589a4859be04ee086c453f3589f32bf.ctex"]
+source_file="res://graphics/backgrounds/desert/desert-ruin.jpg"
+dest_files=["res://.godot/imported/desert-ruin.jpg-1bc7558f8a8996470fad9d63e0792485.ctex"]
 
 [params]
 

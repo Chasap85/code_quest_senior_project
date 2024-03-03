@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs62fqidv7epf"
-path="res://.godot/imported/forest-entrance.jpg-00a17019288933c5c4ece35e9092be0e.ctex"
+uid="uid://bph6r3i5p65eg"
+path="res://.godot/imported/forest-level.jpg-922eab17af7796437b6e148a85487cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/forest-entrance.jpg"
-dest_files=["res://.godot/imported/forest-entrance.jpg-00a17019288933c5c4ece35e9092be0e.ctex"]
+source_file="res://graphics/backgrounds/forest/forest-level.jpg"
+dest_files=["res://.godot/imported/forest-level.jpg-922eab17af7796437b6e148a85487cf1.ctex"]
 
 [params]
 

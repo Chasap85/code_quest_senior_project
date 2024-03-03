@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c28y7ti4xosjm"
-path="res://.godot/imported/forest-door.jpg-24f8ea76a5655d0d2fa51f75aa387470.ctex"
+uid="uid://clsfckbcebatc"
+path="res://.godot/imported/cyberpunk-city.jpg-f1adcbcb0ae576e080c25b6003cd4f32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/forest-door.jpg"
-dest_files=["res://.godot/imported/forest-door.jpg-24f8ea76a5655d0d2fa51f75aa387470.ctex"]
+source_file="res://graphics/backgrounds/cyberpunk/cyberpunk-city.jpg"
+dest_files=["res://.godot/imported/cyberpunk-city.jpg-f1adcbcb0ae576e080c25b6003cd4f32.ctex"]
 
 [params]
 
