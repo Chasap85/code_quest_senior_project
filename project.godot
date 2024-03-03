@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Senior-project"
-run/main_scene="res://level-cyberpunk_club.tscn"
+run/main_scene="res://level-scenes/level-cyberpunk_club.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
