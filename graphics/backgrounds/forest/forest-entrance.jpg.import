@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjfossjoe6fdy"
-path="res://.godot/imported/cyberpunk-club.jpg-143a42ec39b3287691c10e114964d3ca.ctex"
+uid="uid://cs62fqidv7epf"
+path="res://.godot/imported/forest-entrance.jpg-aa7aaf4301ffd57b341b45c920771b10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/cyberpunk-club.jpg"
-dest_files=["res://.godot/imported/cyberpunk-club.jpg-143a42ec39b3287691c10e114964d3ca.ctex"]
+source_file="res://graphics/backgrounds/forest/forest-entrance.jpg"
+dest_files=["res://.godot/imported/forest-entrance.jpg-aa7aaf4301ffd57b341b45c920771b10.ctex"]
 
 [params]
 

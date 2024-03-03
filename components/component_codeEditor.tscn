@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://5eifvsn70rn4"]
+
+[ext_resource type="Script" path="res://scripts/codeEditor.gd" id="1_jrcm3"]
+
+[node name="Control-editor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jrcm3")
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 728.0
+offset_bottom = 824.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 704.0
+offset_right = 448.0
+offset_bottom = 746.0
+theme_override_font_sizes/font_size = 24
+text = "Compile"
+
+[connection signal="text_changed" from="CodeEdit" to="." method="_on_text_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

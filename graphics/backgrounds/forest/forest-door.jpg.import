@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by8ijbcch8p75"
-path="res://.godot/imported/desert-temple.jpg-c16df3dd44a972bd3f4a9c3aa95b308b.ctex"
+uid="uid://c28y7ti4xosjm"
+path="res://.godot/imported/forest-door.jpg-12918f2e98a9a8d6c0375be325c4f763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/desert-temple.jpg"
-dest_files=["res://.godot/imported/desert-temple.jpg-c16df3dd44a972bd3f4a9c3aa95b308b.ctex"]
+source_file="res://graphics/backgrounds/forest/forest-door.jpg"
+dest_files=["res://.godot/imported/forest-door.jpg-12918f2e98a9a8d6c0375be325c4f763.ctex"]
 
 [params]
 
