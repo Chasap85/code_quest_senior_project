@@ -1,6 +1,6 @@
 # code_quest_senior_project
 
-# Game Design Document
+## Game Design Document
 
 **Author(s):** Steven Taborda, Chase Little, Cash Snell, Robert Stolworthy  
 **Last Updated:** Feb 19, 2024  
