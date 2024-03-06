@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://xdxplbclxi5h"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_kg6b7"]
+[ext_resource type="Texture2D" uid="uid://g2op211b2wrg" path="res://graphics/backgrounds/settings_background.png" id="2_7fxo6"]
+[ext_resource type="AudioStream" uid="uid://bg4sghsmssbft" path="res://audio/380135__yottasounds__computer-keyboard-typing-sounds.wav" id="3_lv5uh"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg6b7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1044.0
+texture = ExtResource("2_7fxo6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 440.0
+offset_right = 1499.0
+offset_bottom = 538.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lv5uh")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
