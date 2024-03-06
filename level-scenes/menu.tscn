@@ -29,6 +29,19 @@ offset_right = 1918.0
 offset_bottom = 1126.0
 texture = ExtResource("2_fmivl")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(0.337255, 0.470588, 0.780392, 0.682353)
+position = Vector2(919, -10)
+scale = Vector2(10, 5)
+amount = 100
+speed_scale = 7.14
+emission_shape = 2
+emission_sphere_radius = 104.31
+scale_amount_min = 0.0
+scale_amount_max = 15.0
+anim_speed_min = 10.0
+anim_speed_max = 20.0
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 1073.0
@@ -52,6 +65,7 @@ layout_mode = 2
 text = "Exit To Desktop"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(912, -73)
 stream = ExtResource("3_vow57")
 volume_db = 24.0
 autoplay = true
