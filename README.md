@@ -15,4 +15,5 @@ In CodeQuest, young heroes write real Python code to guide quirky creatures thro
    * These are where each level will live and components will be shared
 * **Components** are objects that can be used in any level scene. They are located in `components` directory.
 * **Scripts** are stored in the script directory. All Objects will store their scripts here.
-
+* **Assets** are stored in the assets folder.
+  * They will hold json, and ui
