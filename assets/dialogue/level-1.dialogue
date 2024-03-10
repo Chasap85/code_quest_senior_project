@@ -1,0 +1,18 @@
+~ level_1_dial_node
+
+Ceia: [[Hello|Hi|Greetings]], fellow traveler! We need your help by coding solutions to solve our problems.
+Ciea: To prepare you before we start...
+Ciea: We need to go over some fundamentals while I have you here.
+Ciea: How experienced are you in programming?
+- No Knowledge
+	Ceia: Great! So this lesson will be of great help
+- Some Knowledge
+	Nathan: Okay, not bad! We will go over what you may alredy know.
+- Start again => level_1_dial_node
+Ceia: So get ready to be tested on an important fundamental... Varaibles!
+Ceia: What can variables hold? Think of Legos: you have big bricks, small bricks, wheels, even figurines! Variables can hold different things too
+Ciea: It's important to name your variables so you can look back on them later and know what they hold.
+Ciea: Just like Legos have different shapes and colors, variables have names to tell them apart. You can call them things that make sense:
+Ciea: Now, we have to use our new variables to make a program.
+
+=> END

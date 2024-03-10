@@ -15,8 +15,20 @@ run/main_scene="res://level-scenes/level-cyberpunk_club.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1024
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/level-1.dialogue")
