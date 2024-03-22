@@ -31,3 +31,15 @@ func _on_request_completed(result, response_code, headers, body):
 	TODO:
 		var json = JSON.parse_string() ...
 	'''
+
+# Handle Result parsed from JudgeAPI
+func _handle_judge_result(result: String):
+	pass
+	'''
+	TODO:
+		If Valid --> Trigger Progression Handler
+		Else --> [
+			1. WA --> Notify user of incorrect submission.
+			2. RTE / CE --> Notify user of issue using JudgeAPI error message
+		]
+	'''
