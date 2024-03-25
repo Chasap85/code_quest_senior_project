@@ -16,7 +16,7 @@ var submission_payload = {
 	"source_code": '',
 	"language_id": 71, # Language ID for Python on Judge0
 	"stdin": "",
-	"expected_output": "hello, world!",  # NOTE TODO: NEEDS TO BE DYNAMIC!!!
+	"expected_output": "hello, world!", # NOTE TODO: NEEDS TO BE DYNAMIC!!!
 	"cpu_time_limit": 2, # CPU time limit in seconds
 	"cpu_extra_time": 0.5, # Extra CPU time for compilation
 	"wall_time_limit": 5, # Wall time limit in seconds
@@ -34,64 +34,73 @@ var submission_token = ''
 var payload_text = ''
 var headers = []
 
+var has_run = false; # Flag to prevent infinite API calls
+
 func _ready():
 	pass
 
 # Code sent from CodeEditor
 func _on_code_received(new_code: String) -> void:
-	source_code = new_code
-	_prepare_submission()
+	if not has_run:
+		source_code = new_code
+		_prepare_submission()
 
 # Prepare submission data
 func _prepare_submission() -> void:
-	for key in api_headers.keys(): # Headers
-		headers.append(key + ": " + api_headers[key])
-	submission_payload["source_code"] = source_code # Body
-	'''
-	TODO:
-		Update expected_output for submission payload here
-	'''
-	payload_text = JSON.stringify(submission_payload) 
-	_send_submission()
+	if not has_run:
+		for key in api_headers.keys(): # Headers
+			headers.append(key + ": " + api_headers[key])
+		submission_payload["source_code"] = source_code # Body
+		payload_text = JSON.stringify(submission_payload) 
+		_send_submission()
 
 # Send submission to Judge0
 func _send_submission() -> void:
-	http_request.connect("request_completed", _on_submission_response)
-	http_request.request(URL, headers, HTTPClient.METHOD_POST, payload_text)
+	if not has_run:
+		http_request.connect("request_completed", _on_submission_response)
+		http_request.request(URL, headers, HTTPClient.METHOD_POST, payload_text)
 	
 # Submission confirmation response from JudgeAPI
 func _on_submission_response(result, response_code, headers, body) -> void:
-	_extract_token_and_fetch_result(body)
+	if not has_run:
+		_extract_token_and_fetch_result(body)
 	
 # Parse token from Submission confirmation response
 func _extract_token_and_fetch_result(response_body) -> void:
-	var json_parser = JSON.new()
-	var json_string = response_body.get_string_from_utf8()
-	var json_data = JSON.parse_string(json_string)
-	submission_token = json_data["token"]
-	# NOTE: Script falls into function below
+	if not has_run:
+		var json_parser = JSON.new()
+		var json_string = response_body.get_string_from_utf8()
+		var json_data = JSON.parse_string(json_string)
+		submission_token = json_data["token"]
+		_get_submission_result()
 
 # Get result of submission
 func _get_submission_result() -> void:
-	http_request.connect("request_completed", _on_result_received)
-	var result_url = URL + "/" + submission_token
-	http_request.request(result_url, headers, HTTPClient.METHOD_GET)
+	if not has_run:
+		http_request.connect("request_completed", _on_result_received)
+		var result_url = URL + "/" + submission_token
+		http_request.request(result_url, headers, HTTPClient.METHOD_GET)
 
 # Submission result received
 func _on_result_received(result, response_code, headers, body) -> void:
-	_process_result(body)
+	if not has_run:
+		_process_result(body)
 
 func _process_result(response_body) -> void:
-	var json_parser = JSON.new()
-	var json_string = response_body.get_string_from_utf8()
-	var json_data = JSON.parse_string(json_string)
+	if not has_run:
+		var json_parser = JSON.new()
+		var json_string = response_body.get_string_from_utf8()
+		var json_data = JSON.parse_string(json_string)
 
-	var status_id = json_data["status"]["id"]
-	'''
-	TODO:
-		Perform game actions based on ID
-	'''
-	if status_id == 3:
-		print("Accepted") # Debug Statement
-	elif status_id == 4:
-		print("Wrong Answer") # Debug Statement
+		var status_id = json_data["status"]["id"]
+		'''
+		TODO:
+			Perform game actions based on ID
+		'''
+		if status_id == 3:
+			print("Accepted") # Debug Statement
+		elif status_id == 4:
+			print("Wrong Answer") # Debug Statement
+			
+		has_run = true # Prevent script from making more API calls.
+	has_run = true
