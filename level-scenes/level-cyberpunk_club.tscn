@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr728e82mmteu"]
+[gd_scene load_steps=7 format=3 uid="uid://cr728e82mmteu"]
 
 [ext_resource type="Texture2D" uid="uid://ha7i7snigke4" path="res://graphics/backgrounds/cyberpunk/cyberpunk-club.png" id="1_1wf1o"]
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="Texture2D" uid="uid://c4ckunywfble0" path="res://graphics/backgrounds/cyberpunk/bg-border-blue.png" id="2_o54gc"]
 [ext_resource type="PackedScene" uid="uid://b0r0d77qrtml7" path="res://components/component_wizard-hand-animation.tscn" id="3_y1jg6"]
 [ext_resource type="PackedScene" uid="uid://5eifvsn70rn4" path="res://components/component_codeEditor.tscn" id="4_mag5e"]
+[ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="6_ik05y"]
 
 [node name="CyberpunkBase" type="Node2D"]
 script = ExtResource("1_dnggc")
@@ -28,7 +29,7 @@ centered = false
 offset = Vector2(-2, 2.08165e-12)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_y1jg6")]
-position = Vector2(168, 472)
+position = Vector2(152, 464)
 scale = Vector2(0.3, 0.3)
 
 [node name="Control-editor" parent="." instance=ExtResource("4_mag5e")]
@@ -36,3 +37,7 @@ offset_left = 1086.0
 offset_top = 19.0
 offset_right = 1126.0
 offset_bottom = 940.0
+
+[node name="ExampleBalloon" parent="." instance=ExtResource("6_ik05y")]
+offset = Vector2(220, 2.08165e-12)
+transform = Transform2D(1, 0, 0, 1, 220, 2.08165e-12)
