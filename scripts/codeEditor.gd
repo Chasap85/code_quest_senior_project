@@ -18,7 +18,7 @@ func _on_submit_pressed():
 	print("Sending signal") # Debug statement
 	var text = code_edit.text
 	codeTextSignal.emit(text)
-	code_handler._receive_code(text)
+	code_handler._on_code_received(text)
 
 # Debug Function
 func _on_text_changed():

@@ -2,44 +2,96 @@ extends Node
 
 # API Settings
 @onready var http_request = $HTTPRequest
-const url = "TODO"
-var page = "/api/"
+const URL = "https://judge0-ce.p.rapidapi.com/submissions"
+const API_KEY = "4b14b6aa5cmsh07aa52259174fa6p1dcdafjsn4360ca5f4056" 
+
+var api_headers = {
+	"content-type": "application/json",
+	"Content-Type": "application/json",
+	"X-RapidAPI-Key": API_KEY,
+	"X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
+}
+
+var submission_payload = {
+	"source_code": '',
+	"language_id": 71, # Language ID for Python on Judge0
+	"stdin": "",
+	"expected_output": "hello, world!",  # NOTE TODO: NEEDS TO BE DYNAMIC!!!
+	"cpu_time_limit": 2, # CPU time limit in seconds
+	"cpu_extra_time": 0.5, # Extra CPU time for compilation
+	"wall_time_limit": 5, # Wall time limit in seconds
+	"memory_limit": 128000, # Memory limit in bytes
+	"stack_limit": 64000, # Stack limit in bytes
+	"max_processes_and_or_threads": 30, # Max processes or threads
+	"enable_per_process_and_thread_time_limit": false,
+	"enable_per_process_and_thread_memory_limit": false,
+	"max_file_size": 1024 # Maximum allowed file size
+}
 
 # Globals
-var code = ""
+var source_code = ''
+var submission_token = '' 
+var payload_text = ''
+var headers = []
 
 func _ready():
 	pass
 
-# Code sent from codeEditor
-func _receive_code(code_text: String) -> void:
-	print("Code received from codeEditor.gd: ", code_text) # Debug statement
-	code = code_text
+# Code sent from CodeEditor
+func _on_code_received(new_code: String) -> void:
+	source_code = new_code
+	_prepare_submission()
 
-# Send user code to Judge0 for Evaluation
-func _api_request(code: String) -> void:
-	pass
-	'''
-	TODO: 
-		http_request.request(URL + page)
-	'''
-
-# Result from JudgeAPI
-func _on_request_completed(result, response_code, headers, body):
-	pass 
+# Prepare submission data
+func _prepare_submission() -> void:
+	for key in api_headers.keys(): # Headers
+		headers.append(key + ": " + api_headers[key])
+	submission_payload["source_code"] = source_code # Body
 	'''
 	TODO:
-		var json = JSON.parse_string() ...
+		Update expected_output for submission payload here
 	'''
+	payload_text = JSON.stringify(submission_payload) 
+	_send_submission()
 
-# Handle Result parsed from JudgeAPI
-func _handle_judge_result(result: String):
-	pass
+# Send submission to Judge0
+func _send_submission() -> void:
+	http_request.connect("request_completed", _on_submission_response)
+	http_request.request(URL, headers, HTTPClient.METHOD_POST, payload_text)
+	
+# Submission confirmation response from JudgeAPI
+func _on_submission_response(result, response_code, headers, body) -> void:
+	_extract_token_and_fetch_result(body)
+	
+# Parse token from Submission confirmation response
+func _extract_token_and_fetch_result(response_body) -> void:
+	var json_parser = JSON.new()
+	var json_string = response_body.get_string_from_utf8()
+	var json_data = JSON.parse_string(json_string)
+	submission_token = json_data["token"]
+	# NOTE: Script falls into function below
+
+# Get result of submission
+func _get_submission_result() -> void:
+	http_request.connect("request_completed", _on_result_received)
+	var result_url = URL + "/" + submission_token
+	http_request.request(result_url, headers, HTTPClient.METHOD_GET)
+
+# Submission result received
+func _on_result_received(result, response_code, headers, body) -> void:
+	_process_result(body)
+
+func _process_result(response_body) -> void:
+	var json_parser = JSON.new()
+	var json_string = response_body.get_string_from_utf8()
+	var json_data = JSON.parse_string(json_string)
+
+	var status_id = json_data["status"]["id"]
 	'''
 	TODO:
-		If Valid --> Trigger Progression Handler
-		Else --> [
-			1. WA --> Notify user of incorrect submission.
-			2. RTE / CE --> Notify user of issue using JudgeAPI error message
-		]
+		Perform game actions based on ID
 	'''
+	if status_id == 3:
+		print("Accepted") # Debug Statement
+	elif status_id == 4:
+		print("Wrong Answer") # Debug Statement
