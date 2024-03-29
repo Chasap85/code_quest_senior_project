@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="PackedScene" uid="uid://gcjybdmwgg1g" path="res://components/level-1-game-view.tscn" id="2_brpbs"]
 [ext_resource type="PackedScene" uid="uid://b0r0d77qrtml7" path="res://components/component_wizard-hand-animation.tscn" id="3_y1jg6"]
-[ext_resource type="PackedScene" uid="uid://5eifvsn70rn4" path="res://components/component_codeEditor.tscn" id="4_mag5e"]
+[ext_resource type="PackedScene" path="res://components/CodeEditor.tscn" id="4_mag5e"]
 [ext_resource type="Texture2D" uid="uid://d7wuxtgfl316" path="res://assets/ui/legos/info-legos.png" id="6_33cix"]
 [ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="6_ik05y"]
 
