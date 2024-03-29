@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gcjybdmwgg1g"]
+
+[ext_resource type="Texture2D" uid="uid://ha7i7snigke4" path="res://graphics/backgrounds/cyberpunk/cyberpunk-club.png" id="1_bhuq7"]
+[ext_resource type="Texture2D" uid="uid://b7rylkuhvcduo" path="res://graphics/backgrounds/cyberpunk/border.png" id="2_j4q0w"]
+
+[node name="Level-1-game-view" type="Node2D"]
+
+[node name="Club" type="Sprite2D" parent="."]
+position = Vector2(29, 55.5)
+scale = Vector2(1.40741, 1.40741)
+texture = ExtResource("1_bhuq7")
+centered = false
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(660.625, 515.75)
+scale = Vector2(1.34562, 1.34562)
+texture = ExtResource("2_j4q0w")

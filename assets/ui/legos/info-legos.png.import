@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ckunywfble0"
-path="res://.godot/imported/bg-border-blue.png-289204650e98007ed9780114a9a1a3ea.ctex"
+uid="uid://d7wuxtgfl316"
+path="res://.godot/imported/info-legos.png-f56319fb6c748a2c771e2bd43e682fdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/backgrounds/cyberpunk/bg-border-blue.png"
-dest_files=["res://.godot/imported/bg-border-blue.png-289204650e98007ed9780114a9a1a3ea.ctex"]
+source_file="res://assets/ui/legos/info-legos.png"
+dest_files=["res://.godot/imported/info-legos.png-f56319fb6c748a2c771e2bd43e682fdc.ctex"]
 
 [params]
 
