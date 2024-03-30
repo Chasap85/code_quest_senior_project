@@ -77,9 +77,10 @@ var dialogue_line: DialogueLine:
 
 
 func _ready() -> void:
-	print(resource)
+	#balloon.hide()
+	var arr = []
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-	start(resource, 'level_1_dial_node', temporary_game_states)
+	start(resource,"level_1_dial_node", arr)
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -87,7 +88,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 
-## Start some dialogue
+## Call to start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
 	temporary_game_states =  [self] + extra_game_states
 	is_waiting_for_input = false

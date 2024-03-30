@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dh0mb5kxm1ahd"]
+
+[ext_resource type="Texture2D" uid="uid://deggr3j7xx8aw" path="res://assets/ui/d:v1/info-balloon.png" id="1_4to3t"]
+[ext_resource type="PackedScene" uid="uid://ciopjtb7s1gqc" path="res://components/animations/legoLong.tscn" id="2_4ivhh"]
+[ext_resource type="PackedScene" uid="uid://b0uvsg871a4l2" path="res://components/animations/legoPlane.tscn" id="3_a2lgb"]
+[ext_resource type="PackedScene" uid="uid://gws50s76oow1" path="res://components/animations/legoSmall.tscn" id="4_v0c8n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et2i4"]
+texture = ExtResource("1_4to3t")
+
+[sub_resource type="Animation" id="Animation_bjpo3"]
+resource_name = "infobox"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 330), Vector2(620, 330)]
+}
+
+[sub_resource type="Animation" id="Animation_1yqu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 330)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7buaw"]
+_data = {
+"RESET": SubResource("Animation_1yqu8"),
+"infobox": SubResource("Animation_bjpo3")
+}
+
+[node name="InfoBox" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 620.0
+offset_bottom = 330.0
+grow_horizontal = 2
+pivot_offset = Vector2(310, 165)
+theme_override_styles/panel = SubResource("StyleBoxTexture_et2i4")
+
+[node name="LegoSmall" parent="PanelContainer" instance=ExtResource("4_v0c8n")]
+position = Vector2(472, 160)
+
+[node name="LegoLong" parent="PanelContainer" instance=ExtResource("2_4ivhh")]
+position = Vector2(344, 160)
+
+[node name="LegoPlane" parent="PanelContainer" instance=ExtResource("3_a2lgb")]
+position = Vector2(168, 160)
+scale = Vector2(0.241055, 0.241055)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_7buaw")
+}

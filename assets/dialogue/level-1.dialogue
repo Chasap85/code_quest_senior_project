@@ -7,9 +7,9 @@ Ciea: How experienced are you in programming?
 - No Knowledge
 	Ceia: Great! So this lesson will be of great help
 - Some Knowledge
-	Nathan: Okay, not bad! We will go over what you may alredy know.
+	Ciea: Okay, not bad! We will go over what you may alredy know.
 - Start again => level_1_dial_node
-Ceia: So get ready to be tested on an important fundamental... Varaibles!
+Ceia: So get ready to be tested on an important fundamental... Varaibles![do emit("some_signal")]
 Ceia: What can variables hold? Think of Legos: you have big bricks, small bricks, wheels, even figurines! Variables can hold different things too
 Ciea: It's important to name your variables so you can look back on them later and know what they hold.
 Ciea: Just like Legos have different shapes and colors, variables have names to tell them apart. You can call them things that make sense:

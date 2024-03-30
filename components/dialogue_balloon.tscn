@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dhj841h4w5krh"]
 
-[ext_resource type="Script" path="res://components/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" path="res://scripts/balloon.gd" id="1_bx64p"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bgboriioii37k" path="res://assets/ui/d:v1/response.png" id="2_stnsn"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
@@ -42,7 +42,7 @@ Panel/styles/panel = SubResource("StyleBoxTexture_36vgf")
 
 [node name="Dialogue" type="CanvasLayer"]
 layer = 100
-script = ExtResource("1_36de5")
+script = ExtResource("1_bx64p")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -81,13 +81,14 @@ anchor_top = -1.03
 anchor_right = 0.924
 anchor_bottom = 0.189
 offset_left = -56.393
-offset_top = 159.92
+offset_top = 175.92
 offset_right = 22.316
 offset_bottom = 88.004
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
@@ -101,13 +102,14 @@ bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
 
 [node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.172549, 0.172549, 0.227451, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 13
 theme_override_font_sizes/bold_font_size = 25
 text = "Dialogue..."
 
