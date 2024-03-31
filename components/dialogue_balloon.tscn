@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://scripts/balloon.gd" id="1_bx64p"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://bgboriioii37k" path="res://assets/ui/d:v1/response.png" id="2_stnsn"]
+[ext_resource type="Texture2D" uid="uid://bgboriioii37k" path="res://assets/ui/dv1/response.png" id="2_ufj4k"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://cuk5cykggn7lq" path="res://assets/ui/d:v1/balloon.png" id="3_pjyvp"]
+[ext_resource type="Texture2D" uid="uid://cuk5cykggn7lq" path="res://assets/ui/dv1/balloon.png" id="3_syklg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0b70"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ingt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx77r"]
-texture = ExtResource("2_stnsn")
+texture = ExtResource("2_ufj4k")
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tkjb"]
-texture = ExtResource("2_stnsn")
+texture = ExtResource("2_ufj4k")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
@@ -26,7 +26,7 @@ expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36vgf"]
-texture = ExtResource("3_pjyvp")
+texture = ExtResource("3_syklg")
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
