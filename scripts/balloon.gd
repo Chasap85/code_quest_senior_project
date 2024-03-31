@@ -12,6 +12,10 @@ const SKIP_ACTION = &"ui_cancel"
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+## dialogue signals
+signal show_info
+signal hide_info
+
 ## The dialogue resource
 var resource: DialogueResource = preload("res://assets/dialogue/level-1.dialogue")
 

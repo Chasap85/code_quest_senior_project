@@ -31,7 +31,6 @@ signal bridge_get_next_dialogue_line_completed(line: DialogueLine)
 ## Used inernally
 signal bridge_mutated()
 
-
 enum MutationBehaviour {
 	Wait,
 	DoNotWait,

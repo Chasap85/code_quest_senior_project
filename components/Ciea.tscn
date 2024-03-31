@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxb2pihen2v8n"]
+
+[ext_resource type="Texture2D" uid="uid://brcutabaecl7b" path="res://graphics/characters/travelers/ceia-animation/ceia-closeup.png" id="1_hmmun"]
+[ext_resource type="Texture2D" uid="uid://c2ktmnhiwafqt" path="res://graphics/characters/travelers/ceia-animation/ceia-closed-eyes.png" id="2_g3yxv"]
+[ext_resource type="Script" path="res://scripts/ciea.gd" id="3_xdvk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_byht6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hmmun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g3yxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hmmun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hmmun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g3yxv")
+}],
+"loop": true,
+"name": &"ciea-eyes",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_x173d"]
+resource_name = "ciea-enters"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 864), Vector2(400, 864)]
+}
+
+[sub_resource type="Animation" id="Animation_e5rxs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(624, 840)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b11qt"]
+_data = {
+"RESET": SubResource("Animation_e5rxs"),
+"ciea-enters": SubResource("Animation_x173d")
+}
+
+[node name="Ciea" type="AnimatedSprite2D"]
+position = Vector2(624, 840)
+scale = Vector2(0.711, 0.711)
+sprite_frames = SubResource("SpriteFrames_byht6")
+animation = &"ciea-eyes"
+frame_progress = 0.845454
+script = ExtResource("3_xdvk1")
+
+[node name="CieaAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b11qt")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cau22vjxolrfi"]
+[gd_scene load_steps=8 format=3 uid="uid://cau22vjxolrfi"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_o85pd"]
 [ext_resource type="Texture2D" uid="uid://c07svo3m7ipwa" path="res://graphics/backgrounds/main_menu.png" id="2_fmivl"]
 [ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/169157__joniheinonen__weather-thunder-heavy-thunder-medium-rain-courtyard-echoes-0001.wav" id="3_vow57"]
+[ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="4_pu7t5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hlyu"]
 bg_color = Color(0.87451, 0.796078, 0, 1)
@@ -24,11 +25,14 @@ theme = SubResource("Theme_8nn8v")
 script = ExtResource("1_o85pd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -86.0
-offset_right = 1918.0
-offset_bottom = 1126.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_fmivl")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -43,6 +47,9 @@ scale_amount_min = 0.0
 scale_amount_max = 15.0
 anim_speed_min = 10.0
 anim_speed_max = 20.0
+
+[node name="TransitionScene" parent="." instance=ExtResource("4_pu7t5")]
+layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
