@@ -9,7 +9,7 @@ func run_popup(status_id: int):
 			print("Accepted") # Debug Statement
 			# TODO: Make Accepted GUI - Proceed Level
 		4:
-			print("WA - Make GUI") # Debug Statement
+			print("Wrong Answer") # Debug Statement
 			# TODO: Make WA GUI
 		_:
 			pass
