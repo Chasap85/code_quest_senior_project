@@ -1,0 +1,76 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfmwwkap8kxti"]
+
+[ext_resource type="Texture2D" uid="uid://bfj4aprj6fwh4" path="res://graphics/characters/travelers/rocket.png" id="1_tlb27"]
+[ext_resource type="Script" path="res://scripts/rocket_ship.gd" id="1_y0kfn"]
+[ext_resource type="Animation" uid="uid://cl6ctu0a4avqf" path="res://assets/anim/fly_left.res" id="3_sa0p7"]
+[ext_resource type="Animation" uid="uid://b6hbhlvsbycdt" path="res://assets/anim/fly_right.res" id="4_utxkx"]
+[ext_resource type="Animation" uid="uid://d2h6rrnurj0it" path="res://assets/anim/fly_up.res" id="5_nmja2"]
+[ext_resource type="Animation" uid="uid://cot1aoce0ljdm" path="res://assets/anim/fly_down.res" id="6_kj4b1"]
+[ext_resource type="Animation" uid="uid://cifu6110k1am3" path="res://assets/anim/idle_left.res" id="7_b06ok"]
+[ext_resource type="Animation" uid="uid://xxlyhcaptg0o" path="res://assets/anim/idle_down.res" id="8_kdd0q"]
+[ext_resource type="Animation" uid="uid://0tgauwfm57ab" path="res://assets/anim/idle_right.res" id="9_gdh2w"]
+[ext_resource type="Animation" uid="uid://pu5qhjf8shy2" path="res://assets/anim/idle_up.res" id="10_7638d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgwj1"]
+radius = 34.5
+height = 186.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5c4c"]
+_data = {
+"fly_down": ExtResource("6_kj4b1"),
+"fly_left": ExtResource("3_sa0p7"),
+"fly_right": ExtResource("4_utxkx"),
+"fly_up": ExtResource("5_nmja2"),
+"idle_down": ExtResource("8_kdd0q"),
+"idle_left": ExtResource("7_b06ok"),
+"idle_right": ExtResource("9_gdh2w"),
+"idle_up": ExtResource("10_7638d")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_iyc07"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_tio4k"]
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ibiq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oetck"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y5ip0"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4pvfv"]
+states/fly/node = SubResource("AnimationNodeBlendSpace2D_iyc07")
+states/fly/position = Vector2(460.5, 96.5)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_tio4k")
+states/idle/position = Vector2(345.5, 100.75)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5ibiq"), "idle", "fly", SubResource("AnimationNodeStateMachineTransition_oetck"), "fly", "idle", SubResource("AnimationNodeStateMachineTransition_y5ip0")]
+
+[node name="RocketShip" type="CharacterBody2D"]
+script = ExtResource("1_y0kfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.263672, 0.283203)
+texture = ExtResource("1_tlb27")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jgwj1")
+
+[node name="RocketAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q5c4c")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q5c4c")
+}
+tree_root = SubResource("AnimationNodeStateMachine_4pvfv")
+advance_expression_base_node = NodePath("../RocketAnimations")
+anim_player = NodePath("../RocketAnimations")
+parameters/fly/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(0, 0)

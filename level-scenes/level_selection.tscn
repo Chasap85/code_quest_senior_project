@@ -1,9 +1,42 @@
-[gd_scene format=3 uid="uid://bcnr8skkw0v03"]
+[gd_scene load_steps=7 format=3 uid="uid://bcnr8skkw0v03"]
 
-[node name="LevelSelection" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Texture2D" uid="uid://c4ocslu0lna5a" path="res://graphics/backgrounds/Screenshot 2024-03-28 at 11.11.46 PM.png" id="1_7yacu"]
+[ext_resource type="PackedScene" uid="uid://dfmwwkap8kxti" path="res://graphics/characters/rocket_ship.tscn" id="1_n4nqd"]
+[ext_resource type="Texture2D" uid="uid://ba77j7rsvgt5f" path="res://graphics/characters/canvas-2024-03-28-11_25-PM.png" id="3_0uasv"]
+[ext_resource type="Texture2D" uid="uid://cgd76ob0j58yq" path="res://graphics/characters/canvas-2024-03-28-11_42-PM.png" id="4_faw5s"]
+[ext_resource type="Texture2D" uid="uid://ba6eq62ymd15s" path="res://graphics/characters/canvas-2024-03-29-12_03-AM.png" id="5_umye8"]
+[ext_resource type="Texture2D" uid="uid://c0pmihunfv01m" path="res://graphics/characters/canvas-2024-03-29-12_10-AM.png" id="6_n3355"]
+
+[node name="LevelSelection" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -514.0
+offset_top = -902.0
+offset_right = 3948.0
+offset_bottom = 3036.0
+texture = ExtResource("1_7yacu")
+
+[node name="FantasyPlanet" type="Sprite2D" parent="."]
+position = Vector2(566, 200)
+scale = Vector2(0.28125, 0.275391)
+texture = ExtResource("3_0uasv")
+
+[node name="CyberPlanet" type="Sprite2D" parent="."]
+position = Vector2(1082, 304)
+scale = Vector2(0.53125, 0.525391)
+texture = ExtResource("4_faw5s")
+
+[node name="PiratePlanet" type="Sprite2D" parent="."]
+position = Vector2(1490, 564)
+scale = Vector2(0.480469, 0.451172)
+texture = ExtResource("5_umye8")
+
+[node name="GnomePlanet" type="Sprite2D" parent="."]
+position = Vector2(387, 629)
+scale = Vector2(0.302734, 0.289062)
+texture = ExtResource("6_n3355")
+
+[node name="RocketShip" parent="." instance=ExtResource("1_n4nqd")]
+position = Vector2(148, 798)
+
+[connection signal="input_event" from="RocketShip" to="GnomePlanet" method="_on_rocket_ship_input_event"]
