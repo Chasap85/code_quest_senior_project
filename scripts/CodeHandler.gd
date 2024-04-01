@@ -20,7 +20,7 @@ var submission_payload = {
 	"source_code": '',
 	"language_id": 71, # Language ID for Python on Judge0
 	"stdin": "",
-	"expected_output": "hello, world!",
+	"expected_output": "3",
 	"cpu_time_limit": 2, # CPU time limit in seconds
 	"cpu_extra_time": 0.5, # Extra CPU time for compilation
 	"wall_time_limit": 5, # Wall time limit in seconds

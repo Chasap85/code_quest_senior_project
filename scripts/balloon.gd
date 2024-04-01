@@ -15,6 +15,7 @@ const SKIP_ACTION = &"ui_cancel"
 ## dialogue signals
 signal show_info
 signal hide_info
+signal start_challenge
 
 ## The dialogue resource
 var resource: DialogueResource = preload("res://assets/dialogue/level-1.dialogue")

@@ -13,6 +13,6 @@ Ceia: So get ready to be tested on an important fundamental... Varaibles![do emi
 Ceia: What can variables hold? Think of Legos: you have big bricks, small bricks, wheels, even figurines! Variables can hold different things too
 Ciea: It's important to name your variables so you can look back on them later and know what they hold.
 Ciea: Just like Legos have different shapes and colors, variables have names to tell them apart. You can call them things that make sense:
-Ciea: Now, we have to use our new variables to make a program.[do emit("hide_info")]
+Ciea: Now, we have to use our new variables to make a program. Complete the task given to you above![do emit("hide_info") emit("start_challenge")] 
 
 => END
