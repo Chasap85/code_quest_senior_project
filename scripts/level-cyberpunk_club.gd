@@ -17,4 +17,3 @@ func _ready():
 
 func _on_dialogue_balloon_hide_info():
 	infoBox.hide()
-	ciea.animate.play_backwards("ciea-enters")
