@@ -5,7 +5,7 @@
 [node name="Level-1-game-view" type="Node2D"]
 
 [node name="Club" type="Sprite2D" parent="."]
-position = Vector2(29, 55.5)
-scale = Vector2(1.40741, 1.40741)
+position = Vector2(29, 133)
+scale = Vector2(1.33744, 1.28781)
 texture = ExtResource("1_bhuq7")
 centered = false
