@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcnr8skkw0v03"]
+[gd_scene load_steps=8 format=3 uid="uid://bcnr8skkw0v03"]
 
 [ext_resource type="Texture2D" uid="uid://c4ocslu0lna5a" path="res://graphics/backgrounds/Screenshot 2024-03-28 at 11.11.46 PM.png" id="1_7yacu"]
 [ext_resource type="PackedScene" uid="uid://dfmwwkap8kxti" path="res://graphics/characters/rocket_ship.tscn" id="1_n4nqd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgd76ob0j58yq" path="res://graphics/characters/canvas-2024-03-28-11_42-PM.png" id="4_faw5s"]
 [ext_resource type="Texture2D" uid="uid://ba6eq62ymd15s" path="res://graphics/characters/canvas-2024-03-29-12_03-AM.png" id="5_umye8"]
 [ext_resource type="Texture2D" uid="uid://c0pmihunfv01m" path="res://graphics/characters/canvas-2024-03-29-12_10-AM.png" id="6_n3355"]
+[ext_resource type="AudioStream" uid="uid://ci3gattywjar5" path="res://audio/74562__jovica__layers-004-2-phase-space-explorer-b2.mp3" id="7_umcn7"]
 
 [node name="LevelSelection" type="Node2D"]
 
@@ -38,5 +39,9 @@ texture = ExtResource("6_n3355")
 
 [node name="RocketShip" parent="." instance=ExtResource("1_n4nqd")]
 position = Vector2(148, 798)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_umcn7")
+autoplay = true
 
 [connection signal="input_event" from="RocketShip" to="GnomePlanet" method="_on_rocket_ship_input_event"]

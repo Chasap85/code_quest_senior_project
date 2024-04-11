@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 
+var last_input_direction = Vector2.ZERO
+
 func _physics_process(_delta):
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -12,9 +14,14 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-	look_at(velocity * 1000)
+# Update last input direction if input is non-zero
+	if input_direction != Vector2.ZERO:
+		last_input_direction = input_direction
 	
-	
+	# Continuously look in the direction of the last input
+	if last_input_direction != Vector2.ZERO:
+		look_at(position + last_input_direction * 100)
+
 # Define the target position for changing levels
 const TARGET_POSITION = Vector2(387, 629)
 const TRIGGER_RADIUS = 10
