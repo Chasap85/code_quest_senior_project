@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/CodeEditor.gd" id="1_0ne5h"]
 [ext_resource type="Texture2D" uid="uid://ya8n171olf0e" path="res://assets/icons/code.png" id="2_qt2uy"]
 [ext_resource type="Texture2D" uid="uid://ckyaohx7q1tpc" path="res://assets/icons/settings.png" id="3_7h363"]
+[ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="4_5onvr"]
 [ext_resource type="Script" path="res://scripts/CodeHandler.gd" id="4_52xin"]
 [ext_resource type="Script" path="res://scripts/CodeErrorHandler.gd" id="5_6xung"]
 [ext_resource type="Script" path="res://scripts/PopupHandler.gd" id="6_aux71"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lmcm"]
-bg_color = Color(0.596078, 0.341176, 0.411765, 1)
+bg_color = Color(0.2, 0.2, 0.2, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
@@ -16,10 +17,8 @@ corner_radius_top_right = 10
 bg_color = Color(0.14902, 0.14902, 0.14902, 1)
 border_blend = true
 
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_b3605"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mh7t"]
-bg_color = Color(0.596078, 0.341176, 0.411765, 1)
+bg_color = Color(0.156863, 0.435294, 0.972549, 1)
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 expand_margin_top = 5.0
@@ -75,21 +74,14 @@ stretch_mode = 0
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 1
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.172549, 0.172549, 0.227451, 1)
-theme_override_colors/font_selected_color = Color(0.992157, 0.760784, 0.309804, 1)
-theme_override_colors/caret_color = Color(0.803922, 0.584314, 0.0588235, 1)
-theme_override_colors/line_number_color = Color(0.803922, 0.584314, 0.0588235, 1)
-theme_override_colors/word_highlighted_color = Color(0.803922, 0.584314, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("4_5onvr")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_4tjtm")
 text = "number_of_apples = 
 
 print(number_of_apples)"
-caret_type = 1
 caret_blink = true
 caret_draw_when_editable_disabled = true
-syntax_highlighter = SubResource("CodeHighlighter_b3605")
 auto_brace_completion_enabled = true
 
 [node name="Submit" type="Button" parent="EditorContainer"]
