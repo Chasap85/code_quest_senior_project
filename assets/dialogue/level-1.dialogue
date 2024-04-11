@@ -1,18 +1,20 @@
 ~ level_1_dial_node
 
-Ceia: [[Hello|Hi|Greetings]], fellow traveler! We need your help by coding solutions to solve our problems.
-Ciea: To prepare you before we start...
-Ciea: We need to go over some fundamentals while I have you here.
-Ciea: How experienced are you in programming?
-- No Knowledge
-	Ceia: Great! So this lesson will be of great help
-- Some Knowledge
-	Ciea: Okay, not bad! We will go over what you may alredy know.
-- Start again => level_1_dial_node
-Ceia: So get ready to be tested on an important fundamental... Varaibles![do emit("show_info")]
-Ceia: What can variables hold? Think of Legos: you have big bricks, small bricks, wheels, even figurines! Variables can hold different things too
-Ciea: It's important to name your variables so you can look back on them later and know what they hold.
-Ciea: Just like Legos have different shapes and colors, variables have names to tell them apart. You can call them things that make sense:
-Ciea: Now, we have to use our new variables to make a program. Complete the task given to you above![do emit("hide_info") emit("start_challenge")] 
+Ceia: [[Hello|Hi|Greetings]], fellow traveler! The Black Hat Wizard Virus has infiltrated the virtual realm of Cyberdale, causing digital chaos.
+Ciea: As the chosen coding heroes, we must join forces with the White Hat Wizard McAfee to restore order.
+Ciea:  Our first mission is to harness the power of variables to organize and manipulate the city's vital information!
+Ciea: Let's dive in - Cyberdale's fate is in our hands!
+Ciea: Ready to continue to variables???
+- Yes im ready!
+Ciea: Take a look at this first example...[do emit("show_info")]
+Ciea: The variable name 'infected_robots' clearly indicates that it stores the number of infected robots.[wait=2] [do emit("hide_info")]
+Ciea: [wait=1]Take a look at another example...[do emit("show_info")][wait=3]
+Ciea: The variable 'robot_name' is assigned the text value "Sparky".[wait=3] [do emit("hide_info")]
+Ciea: One last tip. Take a look at this.[do emit("show_info")] [wait=3]
+Ciea: This line of code uses the 'robot_name' variable to display the name of the infected robot.
+
+
+~ level_1_coding_task
+Story: As you enter Cyberdale's central command center, you find the White Hat Wizard McAfee focused intently on the city's systems. He turns to you.
 
 => END
