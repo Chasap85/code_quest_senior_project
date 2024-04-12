@@ -73,6 +73,9 @@ func _on_code_received(new_code: String) -> void:
 			pass # TODO: Handle case user deletes their entire code and runs (?)
 		else:
 			_prepare_submission()
+	
+	if has_run:
+		popup_handler.run_popup(StatusID.ACCEPTED)
 
 # Prepare submission data
 func _prepare_submission() -> void:
