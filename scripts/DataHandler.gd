@@ -1,7 +1,7 @@
 extends Node
 
 @onready var code_prompt = $"../CodePrompt"
-@onready var code_editor = $"../Control-editor"
+@onready var code_editor = $"../CodeEditorNode"
 
 signal code_prompt_update(new_text)
 signal code_edit_update(new_text, new_output)

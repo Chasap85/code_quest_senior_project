@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr728e82mmteu"]
+[gd_scene load_steps=17 format=3 uid="uid://cmjxwyv7wgbub"]
 
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="PackedScene" uid="uid://gcjybdmwgg1g" path="res://components/level-1-game-view.tscn" id="2_brpbs"]
@@ -57,7 +57,7 @@ offset_top = 94.0
 offset_right = 1314.0
 offset_bottom = 94.0
 
-[node name="Control-editor" parent="." instance=ExtResource("4_mag5e")]
+[node name="CodeEditorNode" parent="." instance=ExtResource("4_mag5e")]
 offset_left = 1253.0
 offset_top = 107.0
 offset_right = 1293.0
