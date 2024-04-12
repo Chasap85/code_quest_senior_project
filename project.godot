@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Senior-project"
+config/name="Code Quest Senior Project"
 run/main_scene="res://level-scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

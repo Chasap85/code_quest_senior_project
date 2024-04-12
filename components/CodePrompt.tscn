@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://54q1fxqrmf8c"]
+
+[ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="1_d2rle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa4x1"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="CodePrompt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 551.0
+offset_bottom = 236.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_d2rle")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_wa4x1")
+text = "The variable, number_of_apples has no value! 
+
+Count the number of apples on screen and assign the variable the appropriate number!"
+editable = false
+wrap_mode = 1

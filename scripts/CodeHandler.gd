@@ -20,7 +20,7 @@ var submission_payload = {
 	"source_code": '',
 	"language_id": 71, # Language ID for Python on Judge0
 	"stdin": "",
-	"expected_output": "hello, world!",
+	"expected_output": 3,
 	"cpu_time_limit": 2, # CPU time limit in seconds
 	"cpu_extra_time": 0.5, # Extra CPU time for compilation
 	"wall_time_limit": 5, # Wall time limit in seconds
@@ -59,11 +59,14 @@ var headers = []
 var has_run = false; # Flag to prevent infinite API calls
 
 func _ready():
+	print("Code Verification Running...")
 	pass
 
 # Code sent from CodeEditor
 func _on_code_received(new_code: String) -> void:
 	if not has_run:
+		print("Debug: Code received from editor")
+		# Add print statement at end here directly rather than IDE
 		source_code = new_code
 		if source_code.is_empty():
 			pass # TODO: Handle case user deletes their entire code and runs (?)
@@ -73,6 +76,7 @@ func _on_code_received(new_code: String) -> void:
 # Prepare submission data
 func _prepare_submission() -> void:
 	if not has_run:
+		print("Debug: Converting code to API Payload")
 		for key in api_headers.keys(): # Headers
 			headers.append(key + ": " + api_headers[key])
 		submission_payload["source_code"] = source_code # Body
@@ -82,6 +86,9 @@ func _prepare_submission() -> void:
 # Send submission to Judge0
 func _send_submission() -> void:
 	if not has_run:
+		print("Debug: Code being sent to Judge")
+		print("Debug: Submission created")
+		print("Debug: Request to Judge to receive results")
 		http_request.connect("request_completed", _on_submission_response)
 		http_request.request(URL, headers, HTTPClient.METHOD_POST, payload_text)
 	
@@ -111,6 +118,7 @@ func _on_result_received(result, response_code, headers, body) -> void:
 
 func _process_result(response_body) -> void:
 	if not has_run:
+		print("Debug: Results received. Processing...")
 		var json_data = _parse_json(response_body)
 		var status_id : StatusID = json_data["status"]["id"]
 
