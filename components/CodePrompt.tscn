@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://54q1fxqrmf8c"]
+[gd_scene load_steps=4 format=3 uid="uid://54q1fxqrmf8c"]
 
 [ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="1_d2rle"]
+[ext_resource type="Script" path="res://CodePrompt.gd" id="1_jfhxg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa4x1"]
 content_margin_left = 15.0
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jfhxg")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
@@ -34,8 +36,5 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_d2rle")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/read_only = SubResource("StyleBoxFlat_wa4x1")
-text = "The variable, number_of_apples has no value! 
-
-Count the number of apples on screen and assign the variable the appropriate number!"
 editable = false
 wrap_mode = 1

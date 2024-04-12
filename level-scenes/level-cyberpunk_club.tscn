@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cr728e82mmteu"]
+[gd_scene load_steps=17 format=3 uid="uid://cr728e82mmteu"]
 
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="PackedScene" uid="uid://gcjybdmwgg1g" path="res://components/level-1-game-view.tscn" id="2_brpbs"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c1hu80134s8a3" path="res://assets/icons/highlightarrow.png" id="12_2pmdn"]
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="13_6l6q6"]
 [ext_resource type="Texture2D" uid="uid://21d21d0u0o18" path="res://assets/ui/misc/apple.png" id="14_iy8g3"]
+[ext_resource type="Script" path="res://scripts/DataHandler.gd" id="15_pqxbm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
 
@@ -51,14 +52,12 @@ offset_right = 1920.0
 offset_bottom = 1024.0
 
 [node name="CodePrompt" parent="." instance=ExtResource("13_6l6q6")]
-visible = false
 offset_left = 1314.0
 offset_top = 94.0
 offset_right = 1314.0
 offset_bottom = 94.0
 
 [node name="Control-editor" parent="." instance=ExtResource("4_mag5e")]
-visible = false
 offset_left = 1253.0
 offset_top = 107.0
 offset_right = 1293.0
@@ -91,6 +90,9 @@ visible = false
 position = Vector2(820, 388)
 scale = Vector2(0.692, 0.708)
 texture = ExtResource("14_iy8g3")
+
+[node name="DataHandler" type="Node" parent="."]
+script = ExtResource("15_pqxbm")
 
 [connection signal="hide_info" from="DialogueBalloon" to="." method="_on_dialogue_balloon_hide_info"]
 [connection signal="show_info" from="DialogueBalloon" to="InfoBox" method="_on_dialogue_balloon_show_info"]

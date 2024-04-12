@@ -1,0 +1,9 @@
+{
+	"level_sections": [
+		{
+			"task_prompt": "The variable, number_of_apples has no value!\n\nCount the number of apples on screen and assign the variable the appropriate number!",
+			"starter_code": "number_of_apples = \n\nprint(number_of_apples)",
+			"expected_output": "3"
+		}
+	]
+}
