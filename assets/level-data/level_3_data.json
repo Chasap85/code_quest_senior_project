@@ -1,0 +1,11 @@
+{
+	"level_sections": [
+		{
+			"task_prompt": 
+				"Ceia found a giant, mean robot called the Corrupted Guardian!\nIt's super tough, but there's a secret way to beat it. Check out the cool gadgets in Ceia's inventory; one of them is the key to victory! \n\n Rules:\n- Ceia can defeat the Guardian if she has a 'Anti-Virus Blade' in her inventory.\n- Set the variable guardian_defeated to True if Ceia can successfully defeat the Guardian.",
+			"starter_code": 
+				"inventory = [\n 'Logic Bomb',\n 'Firewall Shield',\n 'Anti-Virus Blade',\n 'Relic of Wisdom'\n]\n\n# Write your code here",
+			"expected_output": "3"
+		},
+	]
+}

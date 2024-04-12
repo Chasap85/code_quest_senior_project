@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_mwwwp"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="1_q4k1m"]
 [ext_resource type="Texture2D" uid="uid://b7rylkuhvcduo" path="res://graphics/backgrounds/cyberpunk/border.png" id="2_o3aod"]
-[ext_resource type="PackedScene" path="res://components/CodePrompt_Level3.tscn" id="3_yhohj"]
+[ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="3_fcou2"]
 [ext_resource type="Texture2D" uid="uid://bbwu7e43bc6yq" path="res://graphics/backgrounds/desert/desert-ruin.jpg" id="4_5i0ct"]
-[ext_resource type="PackedScene" path="res://components/CodeEditor_Level3.tscn" id="4_gh7hl"]
+[ext_resource type="PackedScene" uid="uid://cdgadr78q5tt8" path="res://components/CodeEditor.tscn" id="4_tjm7a"]
 [ext_resource type="Texture2D" uid="uid://brxftsh4racmy" path="res://assets/icons/backarrow.png" id="6_7sc6u"]
 [ext_resource type="Texture2D" uid="uid://c1hu80134s8a3" path="res://assets/icons/highlightarrow.png" id="7_b0s5h"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_gn4v6"]
@@ -17,13 +17,13 @@ script = ExtResource("1_mwwwp")
 position = Vector2(960, 528)
 texture = ExtResource("1_q4k1m")
 
-[node name="CodePrompt" parent="." instance=ExtResource("3_yhohj")]
+[node name="CodePrompt" parent="." instance=ExtResource("3_fcou2")]
 offset_left = 1301.0
 offset_top = 89.0
 offset_right = 1301.0
 offset_bottom = 89.0
 
-[node name="CodeEditorNode" parent="." instance=ExtResource("4_gh7hl")]
+[node name="CodeEditorNode" parent="." instance=ExtResource("4_tjm7a")]
 offset_left = 1242.0
 offset_top = 94.0
 offset_right = 1242.0

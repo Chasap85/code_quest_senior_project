@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://caf8lmcg0ugi0"]
+[gd_scene load_steps=11 format=3 uid="uid://1jqk3nhrlr6x"]
 
 [ext_resource type="Script" path="res://scripts/CodeEditor.gd" id="1_5ngry"]
 [ext_resource type="Texture2D" uid="uid://ya8n171olf0e" path="res://assets/icons/code.png" id="2_3hpbh"]

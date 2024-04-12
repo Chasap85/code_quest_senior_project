@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://54q1fxqrmf8c"]
 
 [ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="1_d2rle"]
-[ext_resource type="Script" path="res://CodePrompt.gd" id="1_jfhxg"]
+[ext_resource type="Script" path="res://scripts/CodePrompt.gd" id="1_jfhxg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa4x1"]
 content_margin_left = 15.0

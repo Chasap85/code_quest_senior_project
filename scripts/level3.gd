@@ -1,9 +1,11 @@
 extends Node2D
 
+@onready var dataHandler = $DataHandler
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	dataHandler._on_path_received("res://assets/level-data/level_3_data.json")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
