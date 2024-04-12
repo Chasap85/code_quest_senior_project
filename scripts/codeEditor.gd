@@ -1,7 +1,9 @@
 extends Control
 
 signal codeTextSignal(text: String)
+signal answer_accepted()
 
+@onready var data_handler = $"../DataHandler"
 @onready var code_edit = $EditorContainer/CodeEdit as CodeEdit
 @onready var code_handler = get_node("EditorContainer/CodeHandler")
 
@@ -22,6 +24,7 @@ var color_regions = {"'" : "#d5ba82",
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_configure_editor()
+	data_handler.code_edit_update.connect(_on_emitted_editor_contents)
 
 func _configure_editor():
 	code_edit.set_draw_line_numbers(true)
@@ -46,7 +49,16 @@ func _on_submit_pressed():
 	codeTextSignal.emit(text)
 	code_handler._on_code_received(text)
 
+func _on_emitted_editor_contents(new_text, new_output):
+	code_edit.set_text(new_text)
+	code_handler._set_expected_output(new_output)
+
+func _emit_accepted_status():
+	answer_accepted.emit()
+
 # Debug Function
 func _on_text_changed():
 	var new_text = code_edit.text
 	print(new_text)
+	
+
