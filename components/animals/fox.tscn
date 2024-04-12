@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/fox.gd" id="1_cpqfy"]
 [ext_resource type="Texture2D" uid="uid://d0rd6dy2rpada" path="res://graphics/animals/deer-2.png" id="1_djkte"]
 [ext_resource type="Texture2D" uid="uid://bm6w6eabb1613" path="res://graphics/animals/deer-3.png" id="2_3tqhq"]
-[ext_resource type="Texture2D" uid="uid://c4221c4k0tkse" path="res://graphics/animals/deer.png" id="3_bwfw5"]
+[ext_resource type="Texture2D" uid="uid://c4221c4k0tkse" path="res://graphics/animals/deer-1.png" id="3_bwfw5"]
 [ext_resource type="Texture2D" uid="uid://cefogcgcfsoun" path="res://graphics/animals/deer-4.png" id="4_yw2tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4ri5"]

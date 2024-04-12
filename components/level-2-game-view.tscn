@@ -3,23 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://sexgyx1ndbym" path="res://graphics/backgrounds/forest/forest-border.png" id="1_2lpth"]
 [ext_resource type="Texture2D" uid="uid://cs62fqidv7epf" path="res://graphics/backgrounds/forest/forest-entrance.jpg" id="2_favdw"]
 [ext_resource type="PackedScene" uid="uid://bboel4w886imu" path="res://components/animals/deer.tscn" id="3_7y81p"]
-[ext_resource type="Texture2D" uid="uid://clkli1b1u0muf" path="res://graphics/animals/fox.png" id="4_4dl84"]
+[ext_resource type="Texture2D" uid="uid://clkli1b1u0muf" path="res://graphics/animals/fox-1.png" id="4_4dl84"]
 
 [node name="Level-2-game-view" type="Node2D"]
 
 [node name="Forest-border" type="Sprite2D" parent="."]
-position = Vector2(696, 512)
+position = Vector2(595, 442)
+scale = Vector2(0.896342, 0.896341)
 texture = ExtResource("1_2lpth")
 
 [node name="Forest-entrance" type="Sprite2D" parent="."]
-position = Vector2(696, 512)
-scale = Vector2(0.420213, 0.420213)
+position = Vector2(593, 442)
+scale = Vector2(0.377544, 0.377544)
 texture = ExtResource("2_favdw")
 
 [node name="Deer2" parent="." instance=ExtResource("3_7y81p")]
-position = Vector2(784, 688)
+position = Vector2(665, 601)
 
 [node name="Fox" type="Sprite2D" parent="."]
-position = Vector2(518, 805.438)
+position = Vector2(401, 689)
 scale = Vector2(0.0664063, 0.0664063)
 texture = ExtResource("4_4dl84")

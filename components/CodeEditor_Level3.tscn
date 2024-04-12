@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://caf8lmcg0ugi0"]
+
+[ext_resource type="Script" path="res://scripts/CodeEditor.gd" id="1_5ngry"]
+[ext_resource type="Texture2D" uid="uid://ya8n171olf0e" path="res://assets/icons/code.png" id="2_3hpbh"]
+[ext_resource type="Texture2D" uid="uid://ckyaohx7q1tpc" path="res://assets/icons/settings.png" id="3_2a2mr"]
+[ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="4_5chtp"]
+[ext_resource type="Script" path="res://scripts/CodeHandler.gd" id="5_5gfc0"]
+[ext_resource type="Script" path="res://scripts/CodeErrorHandler.gd" id="6_pjl8b"]
+[ext_resource type="Script" path="res://scripts/PopupHandler.gd" id="7_legy8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lmcm"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tjtm"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mh7t"]
+bg_color = Color(0.156863, 0.435294, 0.972549, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 5.0
+
+[node name="CodeEditorNode" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 832.0
+offset_bottom = 921.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_5ngry")
+
+[node name="EditorContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 255.0
+offset_right = 614.0
+offset_bottom = 905.0
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Header" type="Panel" parent="EditorContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lmcm")
+
+[node name="CodeSymbol" type="TextureRect" parent="EditorContainer/Header"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 66.0
+offset_bottom = 61.0
+texture = ExtResource("2_3hpbh")
+
+[node name="GearSymbol" type="TextureButton" parent="EditorContainer/Header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.096
+anchor_top = -1.831
+anchor_right = -0.096
+anchor_bottom = -1.831
+offset_left = 524.8
+offset_top = 146.325
+offset_right = 590.8
+offset_bottom = 204.825
+texture_normal = ExtResource("3_2a2mr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CodeEdit" type="CodeEdit" parent="EditorContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_fonts/font = ExtResource("4_5chtp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_4tjtm")
+text = "inventory = [
+    \"Logic Bomb\", 
+    \"Firewall Shield\", 
+    \"Anti-Virus Blade\", 
+    \"Relic of Wisdom\"
+]
+
+# Write your code here"
+caret_blink = true
+caret_draw_when_editable_disabled = true
+auto_brace_completion_enabled = true
+
+[node name="Submit" type="Button" parent="EditorContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8mh7t")
+text = "Compile"
+
+[node name="CodeHandler" type="Node" parent="EditorContainer"]
+script = ExtResource("5_5gfc0")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="EditorContainer/CodeHandler"]
+
+[node name="CodeErrorHandler" type="Node" parent="EditorContainer/CodeHandler"]
+script = ExtResource("6_pjl8b")
+
+[node name="PopupHandler" type="Node" parent="EditorContainer/CodeHandler"]
+script = ExtResource("7_legy8")
+
+[connection signal="text_changed" from="EditorContainer/CodeEdit" to="." method="_on_text_changed"]
+[connection signal="pressed" from="EditorContainer/Submit" to="." method="_on_submit_pressed"]
