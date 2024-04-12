@@ -2,17 +2,24 @@
 	"level_sections": [
 		{
 			"task_prompt": 
-				"Ceia found a giant, mean robot called the Corrupted Guardian!\nIt's super tough, but there's a secret way to beat it. Check out the cool gadgets in Ceia's inventory; one of them is the key to victory! \n\nRules:\n- Ceia can defeat the Guardian if she has a 'Anti-Virus Blade' in her inventory.\n- Set the variable guardian_defeated to True if Ceia can successfully defeat the Guardian.",
+				"Ceia found a giant, mean robot called the Corrupted Guardian!\nIt's super tough, but there's a secret way to beat it. Check out the cool gadgets in Ceia's inventory; one of them is the key to victory! \n\nRules:\n- Ceia can defeat the Guardian if she has a 'Anti-Virus Blade' in her inventory.\n\n- Set the variable guardian_defeated to True if Ceia can successfully defeat the Guardian.",
 			"starter_code": 
 				"inventory = [\n 'Logic Bomb',\n 'Firewall Shield',\n 'Anti-Virus Blade',\n 'Relic of Wisdom'\n]\n\n# Write your code here\nif 'Anti-Virus Blade' in inventory:\n	defeated_guardian = \n\nprint(defeated_guardian)",
 			"expected_output": "True"
 		},
 		{
 			"task_prompt": 
-				"A horde of Virus Minions is blocking Ceia's path! She must protect herself to proceed. Examine Ceia's inventory for suitable defenses.\nWrite code that will either block the minions' attack or eliminate them entirely. \n\nRules: \n- Ceia can block the minions' attack if she has a 'Firewall Shield' in her inventory. Set the variable minions_blocked to True if she successfully blocks them. \n- Ceia can eliminate the minions if she has an 'Anti-Virus Blade' in her inventory. Set the variable minions_defeated to True if she successfully eliminates them.",
+				"A horde of Virus Minions is blocking Ceia's path! She must protect herself to proceed. Examine Ceia's inventory for suitable defenses.\nWrite code that will either block the minions' attack or eliminate them entirely. \n\nRules: \n\n- Ceia can block the minions' attack if she has a 'Firewall Shield' in her inventory. Set the variable minions_blocked to True if she successfully blocks them.\n\n - Ceia can eliminate the minions if she has an 'Anti-Virus Blade' in her inventory. Set the variable minions_defeated to True if she successfully eliminates them.",
 			"starter_code": 
 				"inventory = [\n 'Logic Bomb',\n 'Firewall Shield',\n 'Anti-Virus Blade',\n 'Relic of Wisdom'\n]\n\n# Write your code here\n\nprint(minions_blocked, minions_defeated)",
 			"expected_output": "True, True"
 		},
+		{
+			"task_prompt": 
+				"Ceia confronts the Black Hat Wizard! The Relic of Wisdom can weaken him, but he'll retaliate with powerful attacks.\nInspect Ceia's inventory for defensive measures and write code that ensures Ceia's defenses are appropriate for his attacks.\nIf the Virus is weakened, code Ceia's final, devastating attack!\n\nRules:\n\n - Ceia can weaken the Virus if she has the 'Relic of Wisdom' in her inventory. Set the virus_weakened variable to True if the Virus is weakened.\n\n - Ceia can defend against a 'Corruption Blast' attack if she has an 'Integrity Shield' in her inventory. Set the defense_successful variable to True.\n\n - Ceia can defend against a 'Malware Storm' attack if she has a 'Malware Barrier'. Set the defense_successful variable to True.\n\n - Ceia can defeat the weakened Virus. Set the virus_defeated variable to True if the Virus is weakened.",
+			"starter_code": 
+				"import random\n\nvirus_weakened = False\ndefense_successful = False \nvirus_defeated = False\n\nceia_inventory = [\"Relic of Wisdom\", \"Integrity Shield\", \"Malware Barrier\"]\n\n# Check if Ceia has the Relic of Wisdom to weaken the Virus\nif \"Relic of Wisdom\" in ceia_inventory:\n    virus_weakened = True\n\n# The Virus randomly selects an attack\nvirus_attacks = [\"Corruption Blast\", \"Malware Storm\"]\nvirus_attack = random.choice(virus_attacks)\n\n# Check Ceia's inventory for appropriate defenses based on the Virus's attack\nif virus_attack == \"Corruption Blast\":\n    if \"Integrity Shield\" in ceia_inventory:\n        defense_successful = True\nelse:  # virus_attack is \"Malware Storm\"\n    if \"Malware Barrier\" in ceia_inventory:\n        defense_successful = True\n\n# If the Virus is weakened, Ceia goes for the final victory    \nif virus_weakened:\n    virus_defeated = True",
+			"expected_output": "True, True"
+		}
 	]
 }
