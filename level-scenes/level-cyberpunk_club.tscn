@@ -58,7 +58,6 @@ offset_right = 1314.0
 offset_bottom = 94.0
 
 [node name="Control-editor" parent="." instance=ExtResource("4_mag5e")]
-visible = false
 offset_left = 1253.0
 offset_top = 107.0
 offset_right = 1293.0
@@ -75,19 +74,16 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Apple" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(504, 376)
 scale = Vector2(0.692, 0.708)
 texture = ExtResource("14_iy8g3")
 
 [node name="Apple2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(666, 298)
 scale = Vector2(0.692, 0.708)
 texture = ExtResource("14_iy8g3")
 
 [node name="Apple3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(820, 388)
 scale = Vector2(0.692, 0.708)
 texture = ExtResource("14_iy8g3")
