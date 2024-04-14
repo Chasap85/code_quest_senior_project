@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_o85pd"]
 [ext_resource type="Texture2D" uid="uid://c07svo3m7ipwa" path="res://graphics/backgrounds/main_menu.png" id="2_fmivl"]
 [ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/169157__joniheinonen__weather-thunder-heavy-thunder-medium-rain-courtyard-echoes-0001.wav" id="3_vow57"]
-[ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="4_pu7t5"]
 [ext_resource type="AudioStream" uid="uid://dnbw5nfw2w50y" path="res://audio/368707__d_a_g_a_z__bass-pad.wav" id="4_5cbxa"]
+[ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="4_pu7t5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hlyu"]
 bg_color = Color(0.87451, 0.796078, 0, 1)
