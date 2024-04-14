@@ -3,6 +3,7 @@ extends Node
 # Child scripts
 @onready var error_handler = $CodeErrorHandler
 @onready var popup_handler = $PopupHandler
+@onready var data_handler = $"../DataHandler"
 
 # API Settings
 @onready var http_request = $HTTPRequest
@@ -72,6 +73,9 @@ func _on_code_received(new_code: String) -> void:
 			pass # TODO: Handle case user deletes their entire code and runs (?)
 		else:
 			_prepare_submission()
+	
+	if has_run:
+		popup_handler.run_popup(StatusID.ACCEPTED)
 
 # Prepare submission data
 func _prepare_submission() -> void:
@@ -143,3 +147,7 @@ func _parse_json(data):
 	var json_string = data.get_string_from_utf8()
 	var json_data = JSON.parse_string(json_string)
 	return json_data
+
+func _set_expected_output(new_output):
+	submission_payload["expected_output"] = new_output
+	
