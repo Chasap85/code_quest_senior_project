@@ -1,6 +1,7 @@
 extends Node
 
 @onready var code_edit = $"../../.."
+@onready var feedback_handler = $"../FeedbackHandler"
 
 func _ready():
 	pass
@@ -13,7 +14,6 @@ func run_popup(status_id: int):
 			# TODO: Make Accepted GUI - Proceed Level
 		4:
 			print("Wrong Answer") # Debug Statement
-			# TODO: Make WA GUI
 		_:
 			pass
 			# TODO: Exception Handling

@@ -6,6 +6,7 @@ signal answer_accepted()
 @onready var data_handler = $"../DataHandler"
 @onready var code_edit = $EditorContainer/CodeEdit as CodeEdit
 @onready var code_handler = get_node("EditorContainer/CodeHandler")
+@onready var feedback_handler = $EditorContainer/CodeHandler/FeedbackHandler
 
 var number_color = "#6aa69c"
 var function_color = "#dcdcad"

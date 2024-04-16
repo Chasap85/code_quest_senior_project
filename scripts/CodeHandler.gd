@@ -4,6 +4,7 @@ extends Node
 @onready var error_handler = $CodeErrorHandler
 @onready var popup_handler = $PopupHandler
 @onready var data_handler = $"../DataHandler"
+@onready var feedback_handler = $FeedbackHandler
 
 # API Settings
 @onready var http_request = $HTTPRequest
