@@ -2,6 +2,7 @@ extends Control
 
 signal codeTextSignal(text: String)
 signal answer_accepted()
+signal answer_declined()
 
 @onready var data_handler = $"../DataHandler"
 @onready var code_edit = $EditorContainer/CodeEdit as CodeEdit
@@ -56,6 +57,9 @@ func _on_emitted_editor_contents(new_text, new_output):
 
 func _emit_accepted_status():
 	answer_accepted.emit()
+
+func _emit_declined_status():
+	answer_declined.emit()
 
 # Debug Function
 func _on_text_changed():

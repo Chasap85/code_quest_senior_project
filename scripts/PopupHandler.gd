@@ -13,6 +13,7 @@ func run_popup(status_id: int):
 			print("Accepted") # Debug Statement
 			# TODO: Make Accepted GUI - Proceed Level
 		4:
+			code_edit._emit_declined_status()
 			print("Wrong Answer") # Debug Statement
 		_:
 			pass

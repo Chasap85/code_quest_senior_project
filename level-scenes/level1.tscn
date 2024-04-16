@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkpq88nngww77"]
+[gd_scene load_steps=19 format=3 uid="uid://bkpq88nngww77"]
 
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="PackedScene" uid="uid://gcjybdmwgg1g" path="res://components/level-1-game-view.tscn" id="2_brpbs"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="13_6l6q6"]
 [ext_resource type="Texture2D" uid="uid://21d21d0u0o18" path="res://assets/ui/misc/apple.png" id="14_iy8g3"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="15_pqxbm"]
+[ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="16_8se5u"]
+[ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="16_oqmi1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
 
@@ -36,11 +38,13 @@ scale = Vector2(1.29178, 1.25417)
 texture = ExtResource("5_l57mt")
 
 [node name="DialogueBalloon" parent="." instance=ExtResource("6_ik05y")]
+visible = false
 offset = Vector2(259, 2.08165e-12)
 scale = Vector2(1.3, 1.3)
 transform = Transform2D(1.3, 0, 0, 1.3, 259, 2.08165e-12)
 
 [node name="InfoBox" parent="." instance=ExtResource("8_xr067")]
+visible = false
 offset = Vector2(330, 170)
 transform = Transform2D(1, 0, 0, 1, 330, 170)
 script = ExtResource("9_pt8l3")
@@ -93,6 +97,14 @@ texture = ExtResource("14_iy8g3")
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("15_pqxbm")
+
+[node name="PopupWA" parent="." instance=ExtResource("16_8se5u")]
+visible = false
+position = Vector2(650, 230)
+
+[node name="PopupAC" parent="." instance=ExtResource("16_oqmi1")]
+visible = false
+position = Vector2(774, 260)
 
 [connection signal="hide_info" from="DialogueBalloon" to="." method="_on_dialogue_balloon_hide_info"]
 [connection signal="show_info" from="DialogueBalloon" to="InfoBox" method="_on_dialogue_balloon_show_info"]

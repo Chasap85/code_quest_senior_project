@@ -1,7 +1,7 @@
 extends Node
 
-@onready var code_prompt = $"../CodePrompt"
-@onready var code_editor = $"../CodeEditorNode"
+@onready var popup_ac = $"../PopupAC"
+@onready var popup_wa = $"../PopupWA"
 
 signal code_prompt_update(new_text)
 signal code_edit_update(new_text, new_output)
@@ -11,7 +11,8 @@ var section_idx = 0
 var level_sections
 
 func _ready():
-	code_editor.answer_accepted.connect(_on_answer_accepted)
+	popup_ac.continue_next_section.connect(_load_next_section)
+
 
 func _on_path_received(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -34,5 +35,6 @@ func _emit_level_data():
 	code_edit_update.emit(curr_section["starter_code"], curr_section["expected_output"])
 	section_idx += 1
 
-func _on_answer_accepted():
+func _load_next_section():
 	_emit_level_data()
+	# TODO: Emit signal to animations
