@@ -1,8 +1,6 @@
 extends Node
 
-# Child scripts
-@onready var error_handler = $CodeErrorHandler
-@onready var popup_handler = $PopupHandler
+@onready var code_editor = $"../../"
 @onready var data_handler = $"../DataHandler"
 @onready var feedback_handler = $FeedbackHandler
 
@@ -76,7 +74,7 @@ func _on_code_received(new_code: String) -> void:
 			_prepare_submission()
 	
 	if has_run:
-		popup_handler.run_popup(StatusID.ACCEPTED)
+		code_editor._emit_accepted_status()
 
 # Prepare submission data
 func _prepare_submission() -> void:
@@ -128,17 +126,15 @@ func _process_result(response_body) -> void:
 		var status_id : StatusID = json_data["status"]["id"]
 
 		match status_id:
-			StatusID.IN_QUEUE:
-				error_handler._run_error_handler(StatusID.IN_QUEUE)
-			StatusID.PROCESSING:
-				error_handler._run_error_handler(StatusID.PROCESSING)
 			StatusID.ACCEPTED:
-				error_handler._run_error_handler(StatusID.IN_QUEUE)
-				popup_handler.run_popup(StatusID.ACCEPTED)
+				print("Debug: Accepted")
+				code_editor._emit_accepted_status()
 			StatusID.WRONG_ANSWER:
-				popup_handler.run_popup(StatusID.WRONG_ANSWER)
-			StatusID.TIME_LIMIT_EXCEEDED:
-				error_handler._run_error_handler(StatusID.TIME_LIMIT_EXCEEDED)
+				print("Debug: Wrong Answer")
+				code_editor._emit_declined_status()
+			_:
+				print("Debug: Not AC/WA - Other answer from Judge0")
+				code_editor._emit_declined_status()
 		
 		has_run = true # Prevent script from making more API calls.
 	has_run = true
