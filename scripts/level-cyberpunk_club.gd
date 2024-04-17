@@ -5,7 +5,7 @@ extends Node2D
 @onready var ciea = $Ciea
 @onready var codeEdit = $"Control-editor"
 @onready var codePrompt = $CodePrompt
-@onready var dataHandler = $DataHandler
+@onready var data_handler = $DataHandler
 @onready var apple = $Apple
 @onready var apple2 = $Apple2
 @onready var apple3 = $Apple3
@@ -18,7 +18,7 @@ func _ready():
 	dialogue.hide()
 	await ciea.animation_looped
 	dialogue.show()
-	dataHandler._on_path_received("res://assets/level-data/level_1_data.json")
+	data_handler.load_level_data("res://assets/level-data/level_1_data.json")
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://level-scenes/menu.tscn")

@@ -1,12 +1,10 @@
 extends Control
 
-@onready var data_handler = $"../DataHandler"
-@onready var code_prompt = $"./TextEdit"
+@onready var text_edit_node = $TextEdit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	data_handler.code_prompt_update.connect(on_emitted_task_prompt)
+	pass
 
-func on_emitted_task_prompt(new_text):
-	code_prompt.set_text(new_text)
-
+func set_new_code_task(task_text: String) -> void:
+	text_edit_node.set_text(task_text)

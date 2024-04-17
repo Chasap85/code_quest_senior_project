@@ -1,40 +1,43 @@
 extends Node
 
-@onready var popup_ac = $"../PopupAC"
-@onready var popup_wa = $"../PopupWA"
+const Utils = preload("res://scripts/utils.gd")
 
-signal code_prompt_update(new_text)
-signal code_edit_update(new_text, new_output)
+@onready var code_prompt_node = $"../CodePrompt"
+@onready var code_editor_node = $"../CodeEditorNode"
 
-# Global counter to track current scene
-var section_idx = 0
-var level_sections
+signal code_prompt_update(task_prompt)
+signal code_edit_update(starter_code, expected_output)
 
-func _ready():
-	popup_ac.continue_next_section.connect(_load_next_section)
+var _level_sections: Array
+var _current_section_index: int
 
+func _ready() -> void:
+	_current_section_index = 0
 
-func _on_path_received(file_path: String):
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	if not file:
-		print("Could not open JSON:", file_path)
+func load_level_data(file_path: String) -> void:
+	var utils = Utils.new()
+	var json_str := utils.load_file_as_string(file_path)
+	if json_str.is_empty():
+		push_error("Failed to load level data. Please check the file path.")
 		return
-	var json_str := file.get_as_text()
-	var level_content: Dictionary = JSON.parse_string(json_str)
-	level_sections = level_content["level_sections"]
-	_emit_level_data()
-	file.close()
-	
 
-func _emit_level_data():
-	if section_idx > level_sections.size() - 1:
-		print("Error: Loading level data out of bounds.")
+	var level_content = JSON.parse_string(json_str)
+	if level_content.has("level_sections"):
+		_level_sections = level_content["level_sections"]
+		_load_current_section()
+	else:
+		push_error("Invalid level data format. Missing 'level_sections' key.")
+
+func _load_current_section() -> void:
+	if _current_section_index >= _level_sections.size():
+		push_warning("Reached the end of level sections.")
 		return
-	var curr_section = level_sections[section_idx]
-	code_prompt_update.emit(curr_section["task_prompt"])
-	code_edit_update.emit(curr_section["starter_code"], curr_section["expected_output"])
-	section_idx += 1
 
-func _load_next_section():
-	_emit_level_data()
-	# TODO: Emit signal to animations
+	var current_section = _level_sections[_current_section_index]
+	code_prompt_node.set_new_code_task(current_section.get("task_prompt", ""))
+	code_editor_node.update_starter_code(current_section.get("starter_code", ""))
+	code_editor_node.update_judge_expected_output(current_section.get("expected_output", ""))
+	_current_section_index += 1
+
+func load_next_section() -> void:
+	_load_current_section()
