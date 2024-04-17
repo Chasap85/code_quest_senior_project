@@ -5,9 +5,6 @@ const Utils = preload("res://scripts/utils.gd")
 @onready var code_prompt_node = $"../CodePrompt"
 @onready var code_editor_node = $"../CodeEditorNode"
 
-signal code_prompt_update(task_prompt)
-signal code_edit_update(starter_code, expected_output)
-
 var _level_sections: Array
 var _current_section_index: int
 
