@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddq6c3gf424ev"]
+[gd_scene load_steps=12 format=3 uid="uid://ddq6c3gf424ev"]
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_mwwwp"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="1_q4k1m"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://brxftsh4racmy" path="res://assets/icons/backarrow.png" id="6_7sc6u"]
 [ext_resource type="Texture2D" uid="uid://c1hu80134s8a3" path="res://assets/icons/highlightarrow.png" id="7_b0s5h"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_gn4v6"]
+[ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="10_r3erw"]
+[ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="11_rk3sn"]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_mwwwp")
@@ -51,5 +53,13 @@ stretch_mode = 4
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("9_gn4v6")
+
+[node name="PopupAC" parent="." instance=ExtResource("10_r3erw")]
+visible = false
+position = Vector2(774, 260)
+
+[node name="PopupWA" parent="." instance=ExtResource("11_rk3sn")]
+visible = false
+position = Vector2(650, 230)
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
