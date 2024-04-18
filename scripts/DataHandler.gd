@@ -2,14 +2,16 @@ extends Node
 
 const Utils = preload("res://scripts/utils.gd")
 
-@onready var code_prompt_node = $"../CodePrompt"
-@onready var code_editor_node = $"../CodeEditorNode"
+@onready var challenge_description_component = $"../CodePrompt"
+@onready var code_editor_component = $"../CodeEditorNode"
 
+var challenge_data: Utils.ChallengeData
 var _level_sections: Array
 var _current_section_index: int
 
 func _ready() -> void:
 	_current_section_index = 0
+	challenge_data = Utils.ChallengeData.new()
 
 func load_level_data(file_path: String) -> void:
 	var utils = Utils.new()
@@ -30,10 +32,12 @@ func _load_current_section() -> void:
 		push_warning("Reached the end of level sections.")
 		return
 
-	var current_section = _level_sections[_current_section_index]
-	code_prompt_node.set_new_code_task(current_section.get("task_prompt", ""))
-	code_editor_node.update_starter_code(current_section.get("starter_code", ""))
-	code_editor_node.update_judge_expected_output(current_section.get("expected_output", ""))
+	var current_section = _level_sections[_current_section_index]	
+	challenge_data.description = current_section.get("task_prompt", "")
+	challenge_data.starter_code = current_section.get("starter_code", "")
+	challenge_data.expected_output = current_section.get("expected_output", "")
+	challenge_description_component.update_challenge_description(challenge_data.description)
+	code_editor_component.update_section_data(challenge_data)
 	_current_section_index += 1
 
 func load_next_section() -> void:

@@ -70,6 +70,8 @@ func send_code_for_evaluation(new_code: String) -> void:
 			_send_submission()
 		else:
 			popup_wa.incorrect_submission()
+	else:
+		popup_ac.answer_accepted()
 
 func _send_submission() -> void:
 	if not has_run:

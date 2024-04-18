@@ -1,12 +1,6 @@
 extends Control
 
-#region Reference Variables (Nodes)
-@onready var data_handler: Node = $"../DataHandler"
-@onready var code_text_box: CodeEdit = $EditorContainer/CodeEdit
-@onready var code_handler: Node = $EditorContainer/CodeHandler
-@onready var feedback_handler: Node = $EditorContainer/CodeHandler/FeedbackHandler
-#endregion
-
+const Utils = preload("res://scripts/utils.gd")
 const COLOR_SETTINGS: Dictionary = {
 	"number_color": "#6aa69c",
 	"function_color": "#dcdcad",
@@ -27,17 +21,26 @@ const COLOR_SETTINGS: Dictionary = {
 	}
 }
 
+#region Reference Variables (Nodes)
+@onready var data_handler: Node = $"../DataHandler"
+@onready var code_text_box: CodeEdit = $EditorContainer/CodeEdit
+@onready var code_handler: Node = $EditorContainer/CodeHandler
+@onready var feedback_handler: Node = $EditorContainer/CodeHandler/FeedbackHandler
+#endregion
+
+var challenge_data: Utils.ChallengeData
+
 func _ready() -> void:
 	_configure_editor()
+	challenge_data = Utils.ChallengeData.new()
 
 func _on_submit_pressed() -> void:
 	code_handler.send_code_for_evaluation(code_text_box.text)
-
-func update_starter_code(new_code: String) -> void:
-	code_text_box.set_text(new_code)
-
-func update_judge_expected_output(new_criteria: String) -> void:
-	code_handler.set_expected_output(new_criteria)
+	
+func update_section_data(challenge_data: Utils.ChallengeData):
+	challenge_data = challenge_data
+	code_text_box.set_text(challenge_data.starter_code)
+	code_handler.set_expected_output(challenge_data.expected_output)
 
 #region Code Editor Text Box Setup
 func _configure_editor() -> void:
