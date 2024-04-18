@@ -105,9 +105,9 @@ func _process_result(response_body: PackedByteArray) -> void:
 		StatusID.ACCEPTED:
 			popup_ac.answer_accepted()
 		StatusID.WRONG_ANSWER:
-			popup_wa.incorrect_submission()
+			feedback_handler.request_feedback(submission_payload["source_code"])
 		_:
-			popup_wa.incorrect_submission()
+			feedback_handler.request_feedback(submission_payload["source_code"])
 
 func _build_headers() -> PackedStringArray:
 	var headers: PackedStringArray = PackedStringArray()

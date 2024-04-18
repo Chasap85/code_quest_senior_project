@@ -41,6 +41,7 @@ func update_section_data(challenge_data: Utils.ChallengeData):
 	challenge_data = challenge_data
 	code_text_box.set_text(challenge_data.starter_code)
 	code_handler.set_expected_output(challenge_data.expected_output)
+	feedback_handler.update_data(challenge_data)
 
 #region Code Editor Text Box Setup
 func _configure_editor() -> void:

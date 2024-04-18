@@ -1,23 +1,33 @@
 extends Node
 
-@onready var http_request = $HTTPRequest
+const Utils = preload("res://scripts/utils.gd")
 
-#region Data Variables for API Query
-var gpt_system_prompt = ""
-var code_task = ""
-var user_code = ""
-var answer_key_prompt = ""
+class ChatGPTPromptData:
+	var gpt_system_prompt: String
+	var challenge_description: String
+	var user_code: String
+	var solution_prompt: String
+
+#region Reference Variables (Nodes)
+@onready var http_request = $HTTPRequest
+@onready var utils = Utils.new()
+@onready var popup_wa = $"../../../../PopupWA"
 #endregion
 
-func _ready():
-	_load_gpt_system_prompt()
+var prompt_data: ChatGPTPromptData
+var challenge_data: Utils.ChallengeData
 
-# Entry Point
-func on_wrong_answer(task_description, submitted_code, solution_prompt):
-	code_task = task_description
-	user_code = submitted_code
-	answer_key_prompt = solution_prompt
-	_query_chatgpt()
+func _ready():
+	challenge_data = Utils.ChallengeData.new()
+	var file_path = "res://assets/level-data/gpt_system_prompt.txt"
+	prompt_data = ChatGPTPromptData.new()
+	prompt_data.gpt_system_prompt = utils.load_file_as_string(file_path)
+
+# Entry Point from CodeHandler
+func request_feedback(user_code: String) -> void:
+	prompt_data.user_code = user_code
+	_dummy_feedback()
+	#_query_chatgpt() # DISABLED TO NOT USE UP CHATGPT CREDITS - REMOVE COMMENT TO TEST CHATGPT
 
 func _query_chatgpt():
 	var url = "https://api.openai.com/v1/chat/completions"
@@ -29,10 +39,10 @@ func _query_chatgpt():
 	]
 
 	var messages = [
-		{"role": "system", "content": ""},
-		{"role": "user", "content": "In this coding game, the user is tasked with: " + code_task},
-		{"role": "user", "content": "Expected: " + answer_key_prompt},
-		{"role": "user", "content": "User's Code: " + user_code}
+		{"role": "system", "content": prompt_data.gpt_system_prompt},
+		{"role": "user", "content": "In this coding game, the user is tasked with: " + prompt_data.challenge_description},
+		{"role": "user", "content": "Expected: " + prompt_data.solution_prompt},
+		{"role": "user", "content": "User's Code: " + prompt_data.user_code}
 	]
 
 	var data = {
@@ -51,24 +61,19 @@ func _query_chatgpt():
 	print("Debug: ChatGPT API Request Sent")
 
 func _on_request_completed(result, response_code, headers, body):
-	var json_data = _parse_json(body)
+	var json_data = utils.parse_json(body)
 	if json_data.has("choices"):
 		var feedback = json_data.choices[0].message.content
 		print("Debug: ChatGPT Feedback:")
 		print(feedback)
+		popup_wa.incorrect_submission(feedback)
 	else:
 		push_error("Invalid JSON response format.")
 
-func _parse_json(data):
-	var json_parser = JSON.new()
-	var json_string = data.get_string_from_utf8()
-	var json_data = JSON.parse_string(json_string)
-	return json_data
-	
-func _load_gpt_system_prompt():
-	var file_path = "res://assets/level-data/gpt_system_prompt.txt"
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	if not file:
-		print("Could not open JSON:", file_path)
-		return
-	gpt_system_prompt = file.get_as_text()
+func update_data(challenge_data: Utils.ChallengeData):
+	prompt_data.challenge_description = challenge_data.description
+	prompt_data.solution_prompt = challenge_data.solution_prompt
+
+# Testing Function
+func _dummy_feedback() -> void:
+	popup_wa.incorrect_submission("FEEDBACK")
