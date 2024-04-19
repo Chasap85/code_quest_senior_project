@@ -1,10 +1,24 @@
 extends Node
 
+'''
+ChallengeData class represents the data for a coding challenge.
+
+- Description: What the user is asked to do.
+- Starter_code: Initial code provided in the code editor, instead of starting with a blank box.
+- Expected_output: Expected output that the user's solution should produce, used for validation by the Judge0 API.
+- Solution_prompt: A reference solution used by ChatGPT to provide feedback and guidance to the user.
+
+This class serves as a structured way to store and manage the data associated with each coding challenge.
+'''
+class ChallengeData:
+	var description: String
+	var starter_code: String
+	var expected_output: String
+	var solution_prompt: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
