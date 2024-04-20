@@ -8,6 +8,13 @@ extends AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+		#animate.play("ciea-enters")
+	#await animate.animation_finished
+	#play("ciea-eyes")
+	pass
+
+func _start_ciea_animation():
+	show()
 	animate.play("ciea-enters")
 	await animate.animation_finished
 	play("ciea-eyes")

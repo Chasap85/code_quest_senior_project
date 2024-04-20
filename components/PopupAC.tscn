@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhighrpknnjks"]
+
+[ext_resource type="Script" path="res://scripts/PopupAC.gd" id="1_250ed"]
+[ext_resource type="FontFile" uid="uid://dwi57nbifvxom" path="res://assets/fonts/Pangolin-Regular.ttf" id="1_l7rgw"]
+[ext_resource type="FontFile" uid="uid://cilo4gcge8bvm" path="res://assets/fonts/Bungee-Regular.ttf" id="2_ysrl2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nweoh"]
+bg_color = Color(0.2, 0.2, 0.278431, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.709804, 0, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfrc0"]
+bg_color = Color(1, 0.709804, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.854902, 0.54902, 0.0862745, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8rko"]
+
+[node name="PopupAC" type="Node2D"]
+script = ExtResource("1_250ed")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 492.0
+offset_bottom = 492.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nweoh")
+
+[node name="TitleLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_top = 39.0
+offset_right = -3.0
+offset_bottom = 145.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 0.709804, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_l7rgw")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]Great Work![/center]"
+
+[node name="SubtextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -113.0
+offset_right = 2.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_l7rgw")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "[center]Your solution is successful.[/center]"
+
+[node name="Continue" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 349.0
+offset_right = 382.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(0.854902, 0.54902, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.854902, 0.54902, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_ysrl2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rfrc0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rfrc0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rfrc0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p8rko")
+action_mode = 0
+text = "Continue"
+
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
