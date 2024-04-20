@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://drbm1le20ec2e"]
+[gd_scene load_steps=11 format=3 uid="uid://bpi11e3iyyext"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_a75vh"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="2_q2yq8"]
 [ext_resource type="PackedScene" uid="uid://cc6ehmmfm6ygs" path="res://components/level-2-game-view.tscn" id="3_hhekq"]
-[ext_resource type="Texture2D" uid="uid://brxftsh4racmy" path="res://assets/icons/backarrow.png" id="5_rl05l"]
-[ext_resource type="Texture2D" uid="uid://c1hu80134s8a3" path="res://assets/icons/highlightarrow.png" id="6_fxo8c"]
+[ext_resource type="Texture2D" uid="uid://mha1sdby2nc8" path="res://assets/ui/buttons/backButtonHover.png" id="6_r6jjv"]
+[ext_resource type="Texture2D" uid="uid://b1hci10fvy6nc" path="res://assets/ui/buttons/backButton_1.png" id="6_wf0ut"]
 [ext_resource type="PackedScene" uid="uid://cdgadr78q5tt8" path="res://components/CodeEditor.tscn" id="7_ud5dm"]
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="8_r6d64"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_p1fyi"]
@@ -17,11 +17,10 @@ material = SubResource("CanvasItemMaterial_dlpu8")
 script = ExtResource("1_a75vh")
 
 [node name="ContainerBackground" type="Sprite2D" parent="."]
-position = Vector2(960, 528)
+position = Vector2(960, 544)
 texture = ExtResource("2_q2yq8")
 
 [node name="Level-2-game-view" parent="." instance=ExtResource("3_hhekq")]
-position = Vector2(-1, 95)
 
 [node name="TransitionScene" parent="." instance=ExtResource("10_1kacu")]
 offset_left = -52.0
@@ -30,26 +29,27 @@ offset_right = -33.0
 offset_bottom = 1022.0
 
 [node name="Back" type="TextureButton" parent="."]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 119.0
-offset_bottom = 94.0
-texture_normal = ExtResource("5_rl05l")
-texture_hover = ExtResource("6_fxo8c")
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 227.0
+offset_bottom = 96.0
+texture_normal = ExtResource("6_wf0ut")
+texture_pressed = ExtResource("6_wf0ut")
+texture_hover = ExtResource("6_r6jjv")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="CodeEditorNode" parent="." instance=ExtResource("7_ud5dm")]
-offset_left = 1235.0
-offset_top = 96.0
-offset_right = 2067.0
-offset_bottom = 1017.0
+offset_left = 1241.0
+offset_top = 104.0
+offset_right = 2073.0
+offset_bottom = 1025.0
 
 [node name="CodePrompt" parent="." instance=ExtResource("8_r6d64")]
-offset_left = 1293.0
-offset_top = 94.0
-offset_right = 1293.0
-offset_bottom = 94.0
+offset_left = 1299.0
+offset_top = 102.0
+offset_right = 1299.0
+offset_bottom = 102.0
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("9_p1fyi")

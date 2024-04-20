@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddq6c3gf424ev"]
+[gd_scene load_steps=10 format=3 uid="uid://ci4oo5rdcg65"]
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_mwwwp"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="1_q4k1m"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="3_fcou2"]
 [ext_resource type="Texture2D" uid="uid://bbwu7e43bc6yq" path="res://graphics/backgrounds/desert/desert-ruin.jpg" id="4_5i0ct"]
 [ext_resource type="PackedScene" uid="uid://cdgadr78q5tt8" path="res://components/CodeEditor.tscn" id="4_tjm7a"]
-[ext_resource type="Texture2D" uid="uid://brxftsh4racmy" path="res://assets/icons/backarrow.png" id="6_7sc6u"]
-[ext_resource type="Texture2D" uid="uid://c1hu80134s8a3" path="res://assets/icons/highlightarrow.png" id="7_b0s5h"]
+[ext_resource type="Texture2D" uid="uid://b1hci10fvy6nc" path="res://assets/ui/buttons/backButton_1.png" id="7_tbl30"]
+[ext_resource type="Texture2D" uid="uid://mha1sdby2nc8" path="res://assets/ui/buttons/backButtonHover.png" id="8_kfy7l"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_gn4v6"]
 
 [node name="Level3" type="Node2D"]
@@ -44,8 +44,9 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 119.0
 offset_bottom = 94.0
-texture_normal = ExtResource("6_7sc6u")
-texture_hover = ExtResource("7_b0s5h")
+texture_normal = ExtResource("7_tbl30")
+texture_pressed = ExtResource("7_tbl30")
+texture_hover = ExtResource("8_kfy7l")
 ignore_texture_size = true
 stretch_mode = 4
 
