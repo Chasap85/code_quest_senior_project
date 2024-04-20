@@ -11,7 +11,7 @@ Ceia: [wait=1]Take a look at another example...[do emit("show_info")][wait=3]
 Ceia: This variable, 'robot_name', holds the name "Sparky".[wait=3] [do emit("hide_info")]
 Ceia: One last tip. Take a look at this.[do emit("show_info")] [wait=3]
 Ceia: This line of code uses the 'robot_name' variable to display the name of the infected robot.
-Ceia: Ready to start coding?
+Ceia: Ready to start coding? [do emit("hide_info")]
 - I'm ready!
 
 # TODO: Revisit this - possibly not needed

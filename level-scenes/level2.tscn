@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpi11e3iyyext"]
+[gd_scene load_steps=13 format=3 uid="uid://drbm1le20ec2e"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_a75vh"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="2_q2yq8"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="8_r6d64"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_p1fyi"]
 [ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="10_1kacu"]
+[ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="10_k17mr"]
+[ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="11_fnd4c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
 
@@ -53,5 +55,13 @@ offset_bottom = 102.0
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("9_p1fyi")
+
+[node name="PopupAC" parent="." instance=ExtResource("10_k17mr")]
+visible = false
+position = Vector2(774, 260)
+
+[node name="PopupWA" parent="." instance=ExtResource("11_fnd4c")]
+visible = false
+position = Vector2(650, 230)
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
