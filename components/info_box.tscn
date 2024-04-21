@@ -1,25 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh0mb5kxm1ahd"]
+[gd_scene load_steps=11 format=3 uid="uid://dh0mb5kxm1ahd"]
 
-[ext_resource type="Texture2D" uid="uid://deggr3j7xx8aw" path="res://assets/ui/dv1/info-balloon.png" id="1_1f418"]
-[ext_resource type="Texture2D" uid="uid://cxish3rhokl5s" path="res://assets/lessons/1-1.png" id="2_ml1qx"]
-[ext_resource type="Texture2D" uid="uid://dpepsnaeaocyh" path="res://assets/lessons/1-2.png" id="3_g3lhy"]
-[ext_resource type="Texture2D" uid="uid://emlndu880c0l" path="res://assets/lessons/1-3.png" id="4_yuynm"]
+[ext_resource type="Texture2D" uid="uid://b6bvsnydo70s5" path="res://assets/lessons/info1-1.png" id="1_qlhgo"]
+[ext_resource type="Texture2D" uid="uid://cy36tsdwo8bbi" path="res://assets/lessons/infoBox.png" id="1_tmoyn"]
+[ext_resource type="Texture2D" uid="uid://hks6ospv03em" path="res://assets/lessons/info1-2.png" id="2_dyltv"]
+[ext_resource type="Texture2D" uid="uid://chbploko4cys3" path="res://assets/lessons/info1-3.png" id="3_mtokn"]
+[ext_resource type="Texture2D" uid="uid://b48incqtbqfod" path="res://assets/lessons/info2-1_2.png" id="5_6q7jl"]
 [ext_resource type="Script" path="res://scripts/Lessons.gd" id="5_veh6k"]
+[ext_resource type="Texture2D" uid="uid://bntryv0hk4mqy" path="res://assets/lessons/info2-2_2.png" id="6_4cplo"]
+[ext_resource type="Texture2D" uid="uid://ct4080cf3f1ka" path="res://assets/lessons/info2-3_2.png" id="7_qbhhq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et2i4"]
-texture = ExtResource("1_1f418")
+texture = ExtResource("1_tmoyn")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4k76n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ml1qx")
+"texture": ExtResource("1_qlhgo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g3lhy")
+"texture": ExtResource("2_dyltv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_yuynm")
+"texture": ExtResource("3_mtokn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6q7jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4cplo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qbhhq")
 }],
 "loop": false,
 "name": &"info",
@@ -36,7 +48,7 @@ pivot_offset = Vector2(310, 165)
 theme_override_styles/panel = SubResource("StyleBoxTexture_et2i4")
 
 [node name="Lessons" type="AnimatedSprite2D" parent="PanelContainer"]
-position = Vector2(312, 166)
+position = Vector2(312, 184)
 scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_4k76n")
 animation = &"info"
