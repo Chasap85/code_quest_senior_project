@@ -12,11 +12,13 @@ extends Node2D
 @onready var apple = $Apple
 @onready var apple2 = $Apple2
 @onready var apple3 = $Apple3
+@onready var map = $Map
 
 @onready var transition = $TransitionScene
 
 @onready var testNode = $Node
 signal start_challenge
+signal map_popup
 
 # Initial Ciea Intro moved to $AnimationNode1 and $Ciea for demo
 # TODO: Refactor so introduction starts here, rest of animations handled by AnimationNodes
@@ -42,5 +44,5 @@ func _on_dialogue_start_challenge():
 	codePrompt.show()
 	
 
-#func _on_dialogue_balloon_hide_info():
-	#infoBox.hide()
+func _on_white_wizard_map_popup():
+	map._start_map_popup()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dchxfsrd1syr5"
-path="res://.godot/imported/guard.png-95a1fbe3afb60c4b5bf8734603eccf76.ctex"
+uid="uid://c42p6phbj8fn4"
+path="res://.godot/imported/invSlot.png-0ebc5e41979ac0a1013b719cb6cd8f84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/characters/enemies/guard.png"
-dest_files=["res://.godot/imported/guard.png-95a1fbe3afb60c4b5bf8734603eccf76.ctex"]
+source_file="res://assets/ui/inventory/invSlot.png"
+dest_files=["res://.godot/imported/invSlot.png-0ebc5e41979ac0a1013b719cb6cd8f84.ctex"]
 
 [params]
 

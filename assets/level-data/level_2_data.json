@@ -1,14 +1,14 @@
 {
 	"level_sections": [
 		{
-			"task_prompt": "A string is a sequence of characters and can contain letters, numbers and even symbols! \n\nCreate a variable 'patient_name' and assign it a string value to name our bird companion!",
+			"task_prompt": "A string is a sequence of characters and can contain letters, numbers and even symbols! \n\nCreate a variable 'patient_name' and assign it a string value to name our animal companion!",
 			"starter_code": "# Create your variable here \n\n\nprint(isinstance(patient_name, str))",
 			"expected_output": "True"
 		},
 		{
 			"task_prompt": "An int (or integer) is a whole number that can be positive or negative without decimals. \n\nCreate a variable, 'bandaids', and assign it the number of bandaids that Charles has!",
 			"starter_code": "# Write your code here\n\n print(bandaids)",
-			"expected_output": "7"
+			"expected_output": "3"
 		},
 		{
 			"task_prompt": "Adjust the bandaids variable by subtracting the number of bandaids used on our patient! \n\nCreate a new variable to store the number used and complete the equation below.",

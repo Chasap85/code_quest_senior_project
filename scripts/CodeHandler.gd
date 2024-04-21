@@ -4,7 +4,6 @@ const Utils = preload("res://scripts/utils.gd")
 
 #region Reference Variables (Nodes)
 @onready var code_editor: Node = $"../../"
-@onready var data_handler: Node = $"../DataHandler"
 @onready var feedback_handler: Node = $FeedbackHandler
 @onready var http_request: HTTPRequest = $HTTPRequest
 @onready var popup_ac: Node = $"../../../PopupAC"

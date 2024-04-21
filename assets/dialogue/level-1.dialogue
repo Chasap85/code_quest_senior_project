@@ -13,9 +13,16 @@ Ceia: One last tip. Take a look at this.[do emit("show_info")] [wait=3]
 Ceia: This line of code uses the 'robot_name' variable to display the name of the infected robot.
 Ceia: Ready to start coding? [do emit("hide_info")]
 - I'm ready!
-
+- I was born ready
+- Hmm I think im ready
+Ceia: [[Lets Go!|Well, lets get going!|Okay cool! Lets go.]][do emit("hide_ciea")][wait=3]
 # TODO: Revisit this - possibly not needed
 ~ level_1_coding_task
-Story: As you enter Cyberdale's central command center, you find the White Hat Wizard McAfee focused intently on the city's systems. He turns to you.
+White Wizard: Ah[do emit("show_wizard")], welcome! The Black Hat Wizard has decided to play one of his tricks again.
+White Wizard: His virus has thrown a few of our robotic citizens into disarray. 
+White Wizard: This presents an excellent opportunity to practice your variable identification skills.
+White Wizard: Are you up to the challenge?
+- Yes I am!
+White Wizard: Great! We need your help![do emit("hide_wizard")]
 
 => END

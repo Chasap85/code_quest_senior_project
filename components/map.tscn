@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6mdpascsx806"]
+
+[ext_resource type="Script" path="res://scripts/map.gd" id="2_3mf3r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lj47d"]
+load_path = "res://.godot/imported/map.png-644089903ac4f6e6f147e9875a006a51.ctex"
+
+[sub_resource type="Animation" id="Animation_ejv3y"]
+resource_name = "map_popup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12), Vector2(0.629, 0.629)]
+}
+
+[sub_resource type="Animation" id="Animation_8s6x0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.629, 0.629)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhskm"]
+_data = {
+"RESET": SubResource("Animation_8s6x0"),
+"map_popup": SubResource("Animation_ejv3y")
+}
+
+[node name="Map" type="Sprite2D"]
+position = Vector2(664, 448)
+scale = Vector2(0.629, 0.629)
+texture = SubResource("CompressedTexture2D_lj47d")
+script = ExtResource("2_3mf3r")
+
+[node name="MapPopupAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhskm")
+}

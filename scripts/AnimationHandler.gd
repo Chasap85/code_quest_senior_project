@@ -11,6 +11,7 @@ func _set_animation_list(_new_animation_list: Array):
 	_animation_list = _new_animation_list
 
 func _play_current_animation():
+	print("playcurrent", _current_animation_index)
 	if _current_animation_index >= _animation_list.size():
 		push_warning("Reached the end of animations to play.")
 		return
