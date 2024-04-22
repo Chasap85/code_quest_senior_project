@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var dialogue = $DialogueBalloon
 @onready var infoBox = $InfoBox
 @onready var ciea = $Ciea
 @onready var codeEdit = $"Control-editor"

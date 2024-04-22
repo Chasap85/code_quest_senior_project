@@ -19,6 +19,7 @@ signal start_challenge
 signal hide_ciea
 signal show_wizard
 signal hide_wizard
+signal hide_charles
 
 ## The dialogue resource
 var resource: DialogueResource
