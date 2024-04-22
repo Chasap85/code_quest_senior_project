@@ -1,0 +1,72 @@
+[gd_scene load_steps=16 format=3 uid="uid://b24ng4f1d6aka"]
+
+[ext_resource type="Script" path="res://components/inventory/inventory_ui.gd" id="1_uggco"]
+[ext_resource type="Texture2D" uid="uid://b4icn46nrcjo6" path="res://assets/ui/inventory/inventoryIcon.png" id="2_1m0m0"]
+[ext_resource type="Texture2D" uid="uid://btwnti7rgtygi" path="res://assets/ui/inventory/mystery.png" id="2_k3i07"]
+[ext_resource type="Texture2D" uid="uid://dfkr8oqspdv3v" path="res://assets/ui/inventory/banner.png" id="2_sgefr"]
+[ext_resource type="Texture2D" uid="uid://bau5wv0214bpp" path="res://assets/ui/inventory/helpIcon.png" id="3_6rr6d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkbi2"]
+texture = ExtResource("2_k3i07")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c38x8"]
+texture = ExtResource("2_1m0m0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqem3"]
+texture = ExtResource("2_1m0m0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5nql"]
+texture = ExtResource("2_1m0m0")
+
+[sub_resource type="Theme" id="Theme_dwhly"]
+Button/styles/disabled = SubResource("StyleBoxTexture_pkbi2")
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_c38x8")
+Button/styles/normal = SubResource("StyleBoxTexture_qqem3")
+Button/styles/pressed = SubResource("StyleBoxTexture_h5nql")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljknc"]
+texture = ExtResource("3_6rr6d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kiyvj"]
+texture = ExtResource("3_6rr6d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3sfco"]
+texture = ExtResource("3_6rr6d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykek7"]
+texture = ExtResource("3_6rr6d")
+
+[sub_resource type="Theme" id="Theme_tj1bw"]
+Button/styles/disabled = SubResource("StyleBoxTexture_ljknc")
+Button/styles/hover = SubResource("StyleBoxTexture_kiyvj")
+Button/styles/normal = SubResource("StyleBoxTexture_3sfco")
+Button/styles/pressed = SubResource("StyleBoxTexture_ykek7")
+
+[node name="BannerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uggco")
+
+[node name="Banner" type="Sprite2D" parent="."]
+position = Vector2(792, 56)
+scale = Vector2(0.483, 0.541)
+texture = ExtResource("2_sgefr")
+
+[node name="InventoryButton" type="Button" parent="."]
+offset_left = 528.0
+offset_top = 16.0
+offset_right = 608.0
+offset_bottom = 96.0
+theme = SubResource("Theme_dwhly")
+
+[node name="HelpButton" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 16.0
+offset_right = 720.0
+offset_bottom = 96.0
+theme = SubResource("Theme_tj1bw")

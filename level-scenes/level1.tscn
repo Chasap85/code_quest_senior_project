@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="16_8se5u"]
 [ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="16_oqmi1"]
 [ext_resource type="Script" path="res://scripts/AnimationHandler.gd" id="18_7kmnn"]
-[ext_resource type="PackedScene" uid="uid://b24ng4f1d6aka" path="res://components/inventory/inventory_ui.tscn" id="21_3eh1w"]
+[ext_resource type="PackedScene" uid="uid://b24ng4f1d6aka" path="res://components/inventory/BannerMenu.tscn" id="21_3eh1w"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
 
@@ -50,6 +50,7 @@ scale = Vector2(1.3, 1.3)
 transform = Transform2D(1.3, 2.08165e-12, 2.08165e-12, 1.3, 259, 2.08165e-12)
 
 [node name="Map" parent="AnimationNode1" instance=ExtResource("11_6mxwu")]
+visible = false
 
 [node name="InfoBox" parent="AnimationNode1" instance=ExtResource("8_xr067")]
 visible = false
@@ -103,6 +104,7 @@ script = ExtResource("15_pqxbm")
 
 [node name="PopupAC" parent="." instance=ExtResource("16_oqmi1")]
 visible = false
+z_index = 1
 position = Vector2(774, 260)
 
 [node name="PopupWA" parent="." instance=ExtResource("16_8se5u")]

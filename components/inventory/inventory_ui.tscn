@@ -1,77 +1,60 @@
-[gd_scene load_steps=15 format=3 uid="uid://b24ng4f1d6aka"]
+[gd_scene load_steps=3 format=3 uid="uid://c00b5nexd61yd"]
 
-[ext_resource type="Texture2D" uid="uid://b4icn46nrcjo6" path="res://assets/ui/inventory/inventoryIcon.png" id="2_1m0m0"]
-[ext_resource type="Texture2D" uid="uid://btwnti7rgtygi" path="res://assets/ui/inventory/mystery.png" id="2_k3i07"]
-[ext_resource type="Texture2D" uid="uid://dfkr8oqspdv3v" path="res://assets/ui/inventory/banner.png" id="2_sgefr"]
-[ext_resource type="Texture2D" uid="uid://bau5wv0214bpp" path="res://assets/ui/inventory/helpIcon.png" id="3_6rr6d"]
+[ext_resource type="Texture2D" uid="uid://b12k7vi2iemhk" path="res://assets/ui/inventory/invContainer.png" id="1_24wiw"]
+[ext_resource type="PackedScene" uid="uid://dw1rhmdet6uxm" path="res://components/inventory/inventory_slot.tscn" id="2_yumac"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkbi2"]
-texture = ExtResource("2_k3i07")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c38x8"]
-texture = ExtResource("2_1m0m0")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqem3"]
-texture = ExtResource("2_1m0m0")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5nql"]
-texture = ExtResource("2_1m0m0")
-
-[sub_resource type="Theme" id="Theme_dwhly"]
-Button/styles/disabled = SubResource("StyleBoxTexture_pkbi2")
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxTexture_c38x8")
-Button/styles/normal = SubResource("StyleBoxTexture_qqem3")
-Button/styles/pressed = SubResource("StyleBoxTexture_h5nql")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljknc"]
-texture = ExtResource("3_6rr6d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kiyvj"]
-texture = ExtResource("3_6rr6d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3sfco"]
-texture = ExtResource("3_6rr6d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykek7"]
-texture = ExtResource("3_6rr6d")
-
-[sub_resource type="Theme" id="Theme_tj1bw"]
-Button/styles/disabled = SubResource("StyleBoxTexture_ljknc")
-Button/styles/hover = SubResource("StyleBoxTexture_kiyvj")
-Button/styles/normal = SubResource("StyleBoxTexture_3sfco")
-Button/styles/pressed = SubResource("StyleBoxTexture_ykek7")
-
-[node name="BannerMenu" type="Control"]
+[node name="InventoryUI" type="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.325
+anchor_bottom = 0.609
+offset_right = -72.0
+offset_bottom = -71.616
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Banner" type="Sprite2D" parent="."]
-position = Vector2(792, 56)
-scale = Vector2(0.483, 0.541)
-texture = ExtResource("2_sgefr")
+[node name="InvContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.02
+anchor_right = 1.088
+anchor_bottom = 1.085
+offset_left = 8.44
+offset_top = -8.04
+offset_right = 308.424
+offset_bottom = 138.08
+scale = Vector2(0.736967, 0.736967)
+texture = ExtResource("1_24wiw")
 
-[node name="InventoryButton" type="Button" parent="."]
-offset_left = 584.0
-offset_top = 16.0
-offset_right = 664.0
-offset_bottom = 96.0
-theme = SubResource("Theme_dwhly")
+[node name="GridContainer" type="GridContainer" parent="InvContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.7106
+offset_top = 160.781
+offset_right = -4.93597
+offset_bottom = -106.772
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 150
+columns = 3
 
-[node name="HelpButton" type="Button" parent="."]
-offset_left = 904.0
-offset_top = 16.0
-offset_right = 984.0
-offset_bottom = 96.0
-theme = SubResource("Theme_tj1bw")
+[node name="InventorySlot" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 152.0
-offset_right = 1016.0
-offset_bottom = 584.0
+[node name="InventorySlot2" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
