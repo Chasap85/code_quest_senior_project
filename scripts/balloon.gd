@@ -20,6 +20,7 @@ signal hide_ciea
 signal show_wizard
 signal hide_wizard
 signal hide_charles
+signal map_popup
 
 ## The dialogue resource
 var resource: DialogueResource

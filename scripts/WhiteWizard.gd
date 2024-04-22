@@ -17,4 +17,5 @@ func _on_dialogue_balloon_show_wizard():
 
 func _on_dialogue_balloon_hide_wizard():
 	animate.play_backwards("ciea-enters")
+	
 

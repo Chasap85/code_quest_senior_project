@@ -6,5 +6,6 @@ extends Sprite2D
 func _ready():
 	hide()
 
-func _start_map_popup():
+func _on_dialogue_balloon_map_popup():
+	show()
 	animate.play("map_popup")
