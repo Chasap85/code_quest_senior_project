@@ -46,6 +46,7 @@ script = ExtResource("1_bx64p")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
+show_behind_parent = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

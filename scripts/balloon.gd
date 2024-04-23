@@ -16,9 +16,14 @@ const SKIP_ACTION = &"ui_cancel"
 signal show_info
 signal hide_info
 signal start_challenge
+signal hide_ciea
+signal show_wizard
+signal hide_wizard
+signal hide_charles
+signal map_popup
 
 ## The dialogue resource
-var resource: DialogueResource = preload("res://assets/dialogue/level-1.dialogue")
+var resource: DialogueResource
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -84,8 +89,18 @@ var dialogue_line: DialogueLine:
 func _ready() -> void:
 	#balloon.hide()
 	var arr = []
-	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-	start(resource,"level_1_dial_node", arr)
+	var scene = get_tree().current_scene.name
+	match scene:
+		"Level1":
+			print("level1")
+			resource = preload("res://assets/dialogue/level-1.dialogue")
+			Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
+			start(resource,"level_1_dial_node", arr)
+		"Level2":
+			print("level2")
+			resource = preload("res://assets/dialogue/level-2.dialogue")
+			Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
+			start(resource,"level_2_dial_node", arr)
 
 
 func _unhandled_input(_event: InputEvent) -> void:

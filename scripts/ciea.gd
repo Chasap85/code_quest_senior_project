@@ -3,14 +3,17 @@ extends AnimatedSprite2D
 # for animation player
 @onready var animate := $CieaAnim
 
-# for animation sprite sheet
-@onready var animSprite := $Ciea
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_start_ciea_animation()
+	pass
+
+func _start_ciea_animation():
+	show()
 	animate.play("ciea-enters")
 	await animate.animation_finished
 	play("ciea-eyes")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+# Ciea leaves when her dialogue ends
+func _on_dialogue_balloon_hide_ciea():
+	animate.play_backwards("ciea-enters")

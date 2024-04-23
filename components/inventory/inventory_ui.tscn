@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00b5nexd61yd"]
+
+[ext_resource type="Texture2D" uid="uid://b12k7vi2iemhk" path="res://assets/ui/inventory/invContainer.png" id="1_24wiw"]
+[ext_resource type="PackedScene" uid="uid://dw1rhmdet6uxm" path="res://components/inventory/inventory_slot.tscn" id="2_yumac"]
+
+[node name="InventoryUI" type="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchor_right = 0.325
+anchor_bottom = 0.609
+offset_right = -72.0
+offset_bottom = -71.616
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.02
+anchor_right = 1.088
+anchor_bottom = 1.085
+offset_left = 8.44
+offset_top = -8.04
+offset_right = 308.424
+offset_bottom = 138.08
+scale = Vector2(0.736967, 0.736967)
+texture = ExtResource("1_24wiw")
+
+[node name="GridContainer" type="GridContainer" parent="InvContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.7106
+offset_top = 160.781
+offset_right = -4.93597
+offset_bottom = -106.772
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 150
+columns = 3
+
+[node name="InventorySlot" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="InvContainer/GridContainer" instance=ExtResource("2_yumac")]
+layout_mode = 2

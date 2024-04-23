@@ -1,48 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh0mb5kxm1ahd"]
+[gd_scene load_steps=11 format=3 uid="uid://dh0mb5kxm1ahd"]
 
-[ext_resource type="Texture2D" uid="uid://deggr3j7xx8aw" path="res://assets/ui/dv1/info-balloon.png" id="1_1f418"]
-[ext_resource type="PackedScene" uid="uid://ciopjtb7s1gqc" path="res://components/animations/legoLong.tscn" id="2_4ivhh"]
-[ext_resource type="PackedScene" uid="uid://b0uvsg871a4l2" path="res://components/animations/legoPlane.tscn" id="3_a2lgb"]
-[ext_resource type="PackedScene" uid="uid://gws50s76oow1" path="res://components/animations/legoSmall.tscn" id="4_v0c8n"]
+[ext_resource type="Texture2D" uid="uid://b6bvsnydo70s5" path="res://assets/lessons/info1-1.png" id="1_qlhgo"]
+[ext_resource type="Texture2D" uid="uid://cy36tsdwo8bbi" path="res://assets/lessons/infoBox.png" id="1_tmoyn"]
+[ext_resource type="Texture2D" uid="uid://hks6ospv03em" path="res://assets/lessons/info1-2.png" id="2_dyltv"]
+[ext_resource type="Texture2D" uid="uid://chbploko4cys3" path="res://assets/lessons/info1-3.png" id="3_mtokn"]
+[ext_resource type="Texture2D" uid="uid://b48incqtbqfod" path="res://assets/lessons/info2-1_2.png" id="5_6q7jl"]
+[ext_resource type="Script" path="res://scripts/Lessons.gd" id="5_veh6k"]
+[ext_resource type="Texture2D" uid="uid://bntryv0hk4mqy" path="res://assets/lessons/info2-2_2.png" id="6_4cplo"]
+[ext_resource type="Texture2D" uid="uid://ct4080cf3f1ka" path="res://assets/lessons/info2-3_2.png" id="7_qbhhq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et2i4"]
-texture = ExtResource("1_1f418")
+texture = ExtResource("1_tmoyn")
 
-[sub_resource type="Animation" id="Animation_1yqu8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(620, 330)]
-}
-
-[sub_resource type="Animation" id="Animation_bjpo3"]
-resource_name = "infobox"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.08165e-12, 330), Vector2(620, 330)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7buaw"]
-_data = {
-"RESET": SubResource("Animation_1yqu8"),
-"infobox": SubResource("Animation_bjpo3")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k76n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qlhgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dyltv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mtokn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6q7jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4cplo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qbhhq")
+}],
+"loop": false,
+"name": &"info",
+"speed": 1.0
+}]
 
 [node name="InfoBox" type="CanvasLayer"]
 
@@ -53,17 +47,11 @@ grow_horizontal = 2
 pivot_offset = Vector2(310, 165)
 theme_override_styles/panel = SubResource("StyleBoxTexture_et2i4")
 
-[node name="LegoSmall" parent="PanelContainer" instance=ExtResource("4_v0c8n")]
-position = Vector2(472, 160)
+[node name="Lessons" type="AnimatedSprite2D" parent="PanelContainer"]
+position = Vector2(312, 184)
+scale = Vector2(0.76, 0.76)
+sprite_frames = SubResource("SpriteFrames_4k76n")
+animation = &"info"
+script = ExtResource("5_veh6k")
 
-[node name="LegoLong" parent="PanelContainer" instance=ExtResource("2_4ivhh")]
-position = Vector2(344, 160)
-
-[node name="LegoPlane" parent="PanelContainer" instance=ExtResource("3_a2lgb")]
-position = Vector2(168, 160)
-scale = Vector2(0.241055, 0.241055)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer"]
-libraries = {
-"": SubResource("AnimationLibrary_7buaw")
-}
+[node name="LessonAnimationPlayer" type="AnimationPlayer" parent="PanelContainer/Lessons"]

@@ -1,0 +1,19 @@
+{
+	"level_sections": [
+		{
+			"task_prompt": "Assign the variable, 'malfunctioning_count' to the number of red dots you see on the map.",
+			"starter_code": "malfunctioning_count = \n\n\nprint(malfunctioning_count)",
+			"expected_output": "3"
+		},
+		{
+			"task_prompt": "Create a variable named 'affected_area' and assign it the name of the area where the malfunctioning robots are located.",
+			"starter_code": "# Write your code here\n\n print(affected_area)",
+			"expected_output": "Cyberdale"
+		},
+		{
+			"task_prompt": "Create a variable named 'total_robots' and assign it the total number of robots in the affected area.\n\nThen, calculate the percentage of malfunctioning robots using the following formula:\n\npercentage = (malfunctioning_count / total_robots) * 100\n\nStore the result in a variable named 'malfunction_percentage'.",
+			"starter_code": "malfunctioning_count = 3\naffected_area = 'Cyberdale'\n\n# Write your code here\nprint(malfunction_percentage)",
+			"expected_output": "60"
+		}
+	]
+}

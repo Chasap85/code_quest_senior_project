@@ -1,22 +1,28 @@
 extends Node
 
-# Child scripts
-@onready var error_handler = $CodeErrorHandler
-@onready var popup_handler = $PopupHandler
+const Utils = preload("res://scripts/utils.gd")
 
-# API Settings
-@onready var http_request = $HTTPRequest
-const URL = "https://judge0-ce.p.rapidapi.com/submissions"
-const API_KEY = "4b14b6aa5cmsh07aa52259174fa6p1dcdafjsn4360ca5f4056" 
+#region Reference Variables (Nodes)
+@onready var code_editor: Node = $"../../"
+@onready var feedback_handler: Node = $FeedbackHandler
+@onready var http_request: HTTPRequest = $HTTPRequest
+@onready var popup_ac: Node = $"../../../PopupAC"
+@onready var popup_wa: Node = $"../../../PopupWA"
+@onready var utils = Utils.new()
+#endregion
 
-var api_headers = {
+#region API Information
+const URL: String = "https://judge0-ce.p.rapidapi.com/submissions"
+const API_KEY: String = "4b14b6aa5cmsh07aa52259174fa6p1dcdafjsn4360ca5f4056"
+
+var api_headers: Dictionary = {
 	"content-type": "application/json",
 	"Content-Type": "application/json",
 	"X-RapidAPI-Key": API_KEY,
 	"X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
 }
 
-var submission_payload = {
+var submission_payload: Dictionary = {
 	"source_code": '',
 	"language_id": 71, # Language ID for Python on Judge0
 	"stdin": "",
@@ -32,13 +38,12 @@ var submission_payload = {
 	"max_file_size": 1024 # Maximum allowed file size
 }
 
-# API Response IDs
-enum StatusID { 
-	IN_QUEUE = 1, 
+enum StatusID {
+	IN_QUEUE = 1,
 	PROCESSING = 2,
-	ACCEPTED = 3, 
-	WRONG_ANSWER = 4, 
-	TIME_LIMIT_EXCEEDED = 5, 
+	ACCEPTED = 3,
+	WRONG_ANSWER = 4,
+	TIME_LIMIT_EXCEEDED = 5,
 	COMPILATION_ERROR = 6,
 	RUNTIME_ERROR_SIGSEGV = 7,
 	RUNTIME_ERROR_SIGXFSZ = 8,
@@ -49,97 +54,65 @@ enum StatusID {
 	INTERNAL_ERROR = 13,
 	EXEC_FORMAT_ERROR = 14
 }
+#endregion
 
-# Globals
-var source_code = ''
-var submission_token = '' 
-var payload_text = ''
-var headers = []
+var has_run: bool = false # Flag to prevent infinite API calls
 
-var has_run = false; # Flag to prevent infinite API calls
-
-func _ready():
-	print("Code Verification Running...")
+func _ready() -> void:
 	pass
 
-# Code sent from CodeEditor
-func _on_code_received(new_code: String) -> void:
+# Entry Point
+func send_code_for_evaluation(new_code: String) -> void:
 	if not has_run:
-		print("Debug: Code received from editor")
-		# Add print statement at end here directly rather than IDE
-		source_code = new_code
-		if source_code.is_empty():
-			pass # TODO: Handle case user deletes their entire code and runs (?)
+		submission_payload["source_code"] = new_code
+		if not new_code.is_empty():
+			_send_submission()
 		else:
-			_prepare_submission()
+			popup_wa.incorrect_submission()
+	else:
+		popup_ac.answer_accepted()
 
-# Prepare submission data
-func _prepare_submission() -> void:
-	if not has_run:
-		print("Debug: Converting code to API Payload")
-		for key in api_headers.keys(): # Headers
-			headers.append(key + ": " + api_headers[key])
-		submission_payload["source_code"] = source_code # Body
-		payload_text = JSON.stringify(submission_payload) 
-		_send_submission()
-
-# Send submission to Judge0
 func _send_submission() -> void:
 	if not has_run:
-		print("Debug: Code being sent to Judge")
-		print("Debug: Submission created")
-		print("Debug: Request to Judge to receive results")
+		var headers: PackedStringArray = _build_headers()
+		var payload_text: String = JSON.stringify(submission_payload)
 		http_request.connect("request_completed", _on_submission_response)
 		http_request.request(URL, headers, HTTPClient.METHOD_POST, payload_text)
-	
-# Submission confirmation response from JudgeAPI
-func _on_submission_response(result, response_code, headers, body) -> void:
-	if not has_run:
-		_extract_token_and_fetch_result(body)
-	
-# Parse token from Submission confirmation response
-func _extract_token_and_fetch_result(response_body) -> void:
-	if not has_run:
-		var json_data = _parse_json(response_body)
-		submission_token = json_data["token"]
-		_get_submission_result()
 
-# Get result of submission
-func _get_submission_result() -> void:
+func _on_submission_response(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if not has_run:
-		http_request.connect("request_completed", _on_result_received)
-		var result_url = URL + "/" + submission_token
+		var json_data: Dictionary = utils.parse_json(body)
+		var submission_token: String = json_data["token"]
+		_get_submission_result(submission_token)
+
+func _get_submission_result(submission_token: String) -> void:
+	if not has_run:
+		http_request.connect("request_completed", _on_submission_result_received)
+		var result_url: String = URL + "/" + submission_token
+		var headers: PackedStringArray = _build_headers()
 		http_request.request(result_url, headers, HTTPClient.METHOD_GET)
 
-# Submission result received
-func _on_result_received(result, response_code, headers, body) -> void:
+func _on_submission_result_received(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if not has_run:
 		_process_result(body)
+		has_run = true
 
-func _process_result(response_body) -> void:
-	if not has_run:
-		print("Debug: Results received. Processing...")
-		var json_data = _parse_json(response_body)
-		var status_id : StatusID = json_data["status"]["id"]
+func _process_result(response_body: PackedByteArray) -> void:
+	var json_data: Dictionary = utils.parse_json(response_body)
+	var status_id: StatusID = json_data["status"]["id"]
+	match status_id:
+		StatusID.ACCEPTED:
+			popup_ac.answer_accepted()
+		StatusID.WRONG_ANSWER:
+			feedback_handler.request_feedback(submission_payload["source_code"])
+		_:
+			feedback_handler.request_feedback(submission_payload["source_code"])
 
-		match status_id:
-			StatusID.IN_QUEUE:
-				error_handler._run_error_handler(StatusID.IN_QUEUE)
-			StatusID.PROCESSING:
-				error_handler._run_error_handler(StatusID.PROCESSING)
-			StatusID.ACCEPTED:
-				error_handler._run_error_handler(StatusID.IN_QUEUE)
-				popup_handler.run_popup(StatusID.ACCEPTED)
-			StatusID.WRONG_ANSWER:
-				popup_handler.run_popup(StatusID.WRONG_ANSWER)
-			StatusID.TIME_LIMIT_EXCEEDED:
-				error_handler._run_error_handler(StatusID.TIME_LIMIT_EXCEEDED)
-		
-		has_run = true # Prevent script from making more API calls.
-	has_run = true
-	
-func _parse_json(data):
-	var json_parser = JSON.new()
-	var json_string = data.get_string_from_utf8()
-	var json_data = JSON.parse_string(json_string)
-	return json_data
+func _build_headers() -> PackedStringArray:
+	var headers: PackedStringArray = PackedStringArray()
+	for key in api_headers.keys():
+		headers.append(key + ": " + api_headers[key])
+	return headers
+
+func set_expected_output(new_output: Variant) -> void:
+	submission_payload["expected_output"] = new_output
