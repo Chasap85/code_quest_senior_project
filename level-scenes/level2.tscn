@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="2_q2yq8"]
 [ext_resource type="PackedScene" uid="uid://cc6ehmmfm6ygs" path="res://components/level-2-game-view.tscn" id="3_hhekq"]
 [ext_resource type="Script" path="res://scripts/Level2_Section1_Visuals.gd" id="4_bgfka"]
-[ext_resource type="PackedScene" uid="uid://7bml6xgfbp33" path="res://components/Charles.tscn" id="4_hdy6b"]
+[ext_resource type="PackedScene" path="res://components/Charles.tscn" id="4_hdy6b"]
 [ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="5_ksxeq"]
 [ext_resource type="Texture2D" uid="uid://mha1sdby2nc8" path="res://assets/ui/buttons/backButtonHover.png" id="6_r6jjv"]
 [ext_resource type="Texture2D" uid="uid://b1hci10fvy6nc" path="res://assets/ui/buttons/backButton_1.png" id="6_wf0ut"]
@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://54q1fxqrmf8c" path="res://components/CodePrompt.tscn" id="8_r6d64"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_p1fyi"]
 [ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="10_1kacu"]
-[ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="10_k17mr"]
-[ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="11_fnd4c"]
+[ext_resource type="PackedScene" path="res://components/PopupAC.tscn" id="10_k17mr"]
+[ext_resource type="PackedScene" path="res://components/PopupWA.tscn" id="11_fnd4c"]
 [ext_resource type="Script" path="res://scripts/AnimationHandler.gd" id="14_n3bvs"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
@@ -92,7 +92,4 @@ position = Vector2(650, 230)
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("14_n3bvs")
 
-[connection signal="hide_charles" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/Charles" method="_on_dialogue_balloon_hide_charles"]
-[connection signal="hide_info" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/InfoBox2" method="_on_dialogue_balloon_hide_info"]
-[connection signal="show_info" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/InfoBox2" method="_on_dialogue_balloon_show_info"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

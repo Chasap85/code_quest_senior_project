@@ -4,7 +4,7 @@ extends Node2D
 var audio_stream_player
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	dataHandler._on_path_received("res://assets/level-data/level_3_data.json")
+	dataHandler.load_level_data("res://assets/level-data/level_3_data.json")
 	# Get the AudioStreamPlayer node
 	audio_stream_player = get_node("Ship/AudioStreamPlayer2D4")
 	# Start a timer to play the audio stream player after one second

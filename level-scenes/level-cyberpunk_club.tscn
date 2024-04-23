@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0o7txa5wqx17"]
+[gd_scene load_steps=16 format=3 uid="uid://c1dneeb6e0jw4"]
 
 [ext_resource type="Script" path="res://scripts/level-cyberpunk_club.gd" id="1_dnggc"]
 [ext_resource type="PackedScene" uid="uid://gcjybdmwgg1g" path="res://components/level-1-game-view.tscn" id="2_brpbs"]
