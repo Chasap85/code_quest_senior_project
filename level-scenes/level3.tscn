@@ -56,12 +56,12 @@ offset_right = 1242.0
 offset_bottom = 102.0
 
 [node name="GameBackground" type="Sprite2D" parent="."]
-position = Vector2(633.5, 554.5)
+position = Vector2(633.5, 562.5)
 scale = Vector2(0.298399, 0.369089)
 texture = ExtResource("4_5i0ct")
 
 [node name="GameBorder" type="Sprite2D" parent="."]
-position = Vector2(624.488, 548.876)
+position = Vector2(624.488, 556.876)
 scale = Vector2(1.29178, 1.25417)
 texture = ExtResource("2_o3aod")
 
@@ -71,6 +71,7 @@ texture = ExtResource("2_o3aod")
 position = Vector2(732, 730)
 scale = Vector2(0.183594, 0.183594)
 script = ExtResource("8_rog6e")
+metadata/_edit_group_ = true
 
 [node name="SkillfulEnemyPlayer" type="AnimationPlayer" parent="AnimationNode1/SkillfulEnemy"]
 libraries = {
