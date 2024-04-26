@@ -10,7 +10,6 @@ func _ready():
 
 func _on_dialogue_balloon_show_info():
 	lesson.getInfo()
-	print("SHOW INFO")
 	show()
 
 

@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_gn4v6"]
 [ext_resource type="Texture2D" uid="uid://d1q8rvsxrfsln" path="res://graphics/characters/travelers/pirateship.png" id="10_cpog7"]
 [ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="10_fq4m8"]
-[ext_resource type="Texture2D" uid="uid://cs6ht1orakfqr" path="res://graphics/backgrounds/pirate/Screenshot 2024-04-16 at 1.51-Photoroom.png" id="11_toani"]
 [ext_resource type="Texture2D" uid="uid://cs6ht1orakfqr" path="res://graphics/backgrounds/pirate/water_sprite.png" id="11_toani"]
 [ext_resource type="AudioStream" uid="uid://b5mvywu6pyrnm" path="res://audio/pirates.wav" id="14_3xfti"]
 [ext_resource type="AudioStream" uid="uid://bncs577sxaoo" path="res://audio/drunkensailor.wav" id="15_meeey"]
@@ -310,7 +309,6 @@ hue_variation_max = 0.12
 [node name="AnimationNode1" type="Node" parent="."]
 
 [node name="Dialogue" parent="AnimationNode1" instance=ExtResource("10_fq4m8")]
-visible = false
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("9_gn4v6")

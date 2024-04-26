@@ -17,5 +17,6 @@ func _process(delta):
 	pass
 
 func getInfo():
+	print('get info')
 	set_frame(count)
 	count += 1
