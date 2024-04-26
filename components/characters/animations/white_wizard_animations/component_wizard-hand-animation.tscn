@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0r0d77qrtml7"]
+
+[ext_resource type="Texture2D" uid="uid://bwea8r34ckna" path="res://graphics/characters/travelers/wizard_right_arm_animation_images/wizard-2.png" id="1_ixce2"]
+[ext_resource type="Texture2D" uid="uid://dlsn1aam8s6g" path="res://graphics/characters/travelers/wizard_right_arm_animation_images/wizard.png" id="2_hytth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_217on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ixce2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hytth")
+}],
+"loop": true,
+"name": &"wizard_gesture",
+"speed": 2.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(730, 544)
+sprite_frames = SubResource("SpriteFrames_217on")
+animation = &"wizard_gesture"
+autoplay = "wizard_gesture"
+frame_progress = 0.123365
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

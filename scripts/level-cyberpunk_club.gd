@@ -8,9 +8,6 @@ extends Node2D
 @onready var data_handler = $DataHandler
 @onready var animation_node_1 = $AnimationNode1
 @onready var animation_node_2 = $AnimationNode2
-@onready var apple = $Apple
-@onready var apple2 = $Apple2
-@onready var apple3 = $Apple3
 @onready var map = $Map
 
 @onready var transition = $TransitionScene
@@ -36,9 +33,6 @@ func _on_back_pressed():
 	# _transition.transition_to("Path to next scene")
 
 func _on_dialogue_start_challenge():
-	var apples = [apple, apple2, apple3]
-	for each in apples:
-		each.show()
 	codeEdit.show()
 	codePrompt.show()
 	

@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://drbm1le20ec2e"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_a75vh"]
-[ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/background.png" id="2_q2yq8"]
-[ext_resource type="PackedScene" uid="uid://cc6ehmmfm6ygs" path="res://components/level-2-game-view.tscn" id="3_hhekq"]
+[ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/game_background.png" id="2_q2yq8"]
+[ext_resource type="PackedScene" uid="uid://cc6ehmmfm6ygs" path="res://components/level_two_components/level_2_game_view.tscn" id="3_hhekq"]
 [ext_resource type="Script" path="res://scripts/Level2_Section1_Visuals.gd" id="4_bgfka"]
-[ext_resource type="PackedScene" uid="uid://7bml6xgfbp33" path="res://components/Charles.tscn" id="4_hdy6b"]
+[ext_resource type="PackedScene" uid="uid://7bml6xgfbp33" path="res://components/characters/Charles.tscn" id="4_hdy6b"]
 [ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="5_ksxeq"]
 [ext_resource type="Texture2D" uid="uid://mha1sdby2nc8" path="res://assets/ui/buttons/backButtonHover.png" id="6_r6jjv"]
 [ext_resource type="Texture2D" uid="uid://b1hci10fvy6nc" path="res://assets/ui/buttons/backButton_1.png" id="6_wf0ut"]
