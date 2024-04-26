@@ -60,6 +60,7 @@ scale = Vector2(0.483, 0.541)
 texture = ExtResource("2_sgefr")
 
 [node name="InventoryButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 528.0
 offset_top = 16.0
 offset_right = 608.0
@@ -67,6 +68,7 @@ offset_bottom = 96.0
 theme = SubResource("Theme_dwhly")
 
 [node name="HelpButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 16.0
 offset_right = 720.0

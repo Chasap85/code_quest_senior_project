@@ -92,15 +92,17 @@ func _ready() -> void:
 	var scene = get_tree().current_scene.name
 	match scene:
 		"Level1":
-			print("level1")
 			resource = preload("res://assets/dialogue/level-1.dialogue")
 			Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 			start(resource,"level_1_dial_node", arr)
 		"Level2":
-			print("level2")
 			resource = preload("res://assets/dialogue/level-2.dialogue")
 			Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 			start(resource,"level_2_dial_node", arr)
+		"Level3":
+			resource = preload("res://assets/dialogue/level-3.dialogue")
+			Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
+			start(resource,"level_3_dial_node", arr)
 
 
 func _unhandled_input(_event: InputEvent) -> void:
