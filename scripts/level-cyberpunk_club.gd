@@ -1,8 +1,6 @@
 extends Node2D
 
-@onready var infoBox = $InfoBox
-@onready var ciea = $Ciea
-@onready var codeEdit = $"Control-editor"
+@onready var codeEdit = $CodeEditorNode
 @onready var codePrompt = $CodePrompt
 @onready var animation_handler = $AnimationHandler
 @onready var data_handler = $DataHandler

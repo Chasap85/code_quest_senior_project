@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh0mb5kxm1ahd"]
+[gd_scene load_steps=14 format=3 uid="uid://dh0mb5kxm1ahd"]
 
 [ext_resource type="Texture2D" uid="uid://b6bvsnydo70s5" path="res://assets/lessons/lesson_one_variables/01_naming_variables.png" id="1_qlhgo"]
 [ext_resource type="Texture2D" uid="uid://cy36tsdwo8bbi" path="res://assets/lessons/lesson_container.png" id="1_tmoyn"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://scripts/Lessons.gd" id="5_veh6k"]
 [ext_resource type="Texture2D" uid="uid://bntryv0hk4mqy" path="res://assets/lessons/lesson_two_data_types/02_strings.png" id="6_4cplo"]
 [ext_resource type="Texture2D" uid="uid://ct4080cf3f1ka" path="res://assets/lessons/lesson_two_data_types/03_booleans.png" id="7_qbhhq"]
+[ext_resource type="Texture2D" uid="uid://bo5bw1dj8upba" path="res://assets/lessons/lesson_three_if_else/if.png" id="8_d5pdq"]
+[ext_resource type="Texture2D" uid="uid://brtf1bu434rxg" path="res://assets/lessons/lesson_three_if_else/then.png" id="9_8f1r6"]
+[ext_resource type="Texture2D" uid="uid://kk56rrkbeix7" path="res://assets/lessons/lesson_three_if_else/else.png" id="10_01cmu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et2i4"]
 texture = ExtResource("1_tmoyn")
@@ -32,6 +35,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_qbhhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d5pdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8f1r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_01cmu")
 }],
 "loop": false,
 "name": &"info",

@@ -1,13 +1,13 @@
 ~ level_3_dial_node
 
-Ceia: OH NO! A Kraken!
-Ceia: We need to get you to understand if else statements fast before the Kraken destroys our ship!
-Ceia: Bytebeard and the crew are depending on you! So lets hurry and go over.. IF ELSE statements. 
-Ceia: If Else statements can help us decide which direction to take in order to survive the Kraken.
-Ceia: Checkouto out the information above. 
-Ceia: If something is true.. 
-Ceia: If Something is false..
-Ceia: So IF ELSE statments will direct us in the right logical path to Victory!
-Ceia: Good Luck brave coder!
+Bytebeard: OH NO! A Kraken!
+Bytebeard: We need to get you to understand if else statements fast before the Kraken destroys our ship!
+Bytebeard: Bytebeard and the crew are depending on you! So lets hurry and go over.. IF ELSE statements. 
+Bytebeard: If Else statements can help us decide which direction to take in order to survive the Kraken.
+Bytebeard: Checkouto out the information above. [do emit('show_info')]
+Bytebeard: [wait=2]If something is true.. [do emit('hide_info')][wait=1][do emit('show_info')]
+Bytebeard: [wait=2]If Something is false.. [wait=2][do emit('hide_info')][wait=1][do emit('show_info')]
+Bytebeard: So IF ELSE statments will direct us in the right logical path to Victory!
+Bytebeard: Good Luck brave coder![do emit('hide_charles')][do emit('hide_info')]
 
 => END

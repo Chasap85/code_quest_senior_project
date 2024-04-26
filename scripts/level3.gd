@@ -1,12 +1,18 @@
 extends Node2D
 
 @onready var dataHandler = $DataHandler
+@onready var animation_handler = $AnimationHandler
+@onready var animation_node_1 = $AnimationNode1
+
 var audio_stream_player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dataHandler.load_level_data("res://assets/level-data/level_3_data.json")
 	# Get the AudioStreamPlayer node
 	audio_stream_player = get_node("Ship/AudioStreamPlayer2D4")
+	# start animation handling
+	animation_handler._set_animation_list([animation_node_1])
+	animation_handler._play_current_animation()
 	# Start a timer to play the audio stream player after one second
 	$Timer.start(1)
 

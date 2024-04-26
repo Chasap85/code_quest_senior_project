@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ddq6c3gf424ev"]
+[gd_scene load_steps=33 format=3 uid="uid://ddq6c3gf424ev"]
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_mwwwp"]
 [ext_resource type="Texture2D" uid="uid://5xqr3wq4x033" path="res://graphics/backgrounds/game_background.png" id="1_q4k1m"]
@@ -10,11 +10,16 @@
 [ext_resource type="AudioStream" uid="uid://dkg2h5iaqmtlj" path="res://audio/kraken.wav" id="8_1c5hd"]
 [ext_resource type="Script" path="res://scripts/DataHandler.gd" id="9_gn4v6"]
 [ext_resource type="Texture2D" uid="uid://d1q8rvsxrfsln" path="res://graphics/characters/travelers/pirateship.png" id="10_cpog7"]
+[ext_resource type="Script" path="res://scripts/level3_Section1_Visuals.gd" id="10_f7g80"]
 [ext_resource type="PackedScene" uid="uid://dhj841h4w5krh" path="res://components/dialogue_balloon.tscn" id="10_fq4m8"]
 [ext_resource type="Texture2D" uid="uid://cs6ht1orakfqr" path="res://graphics/backgrounds/pirate/water_sprite.png" id="11_toani"]
+[ext_resource type="PackedScene" uid="uid://3l68eklct1gk" path="res://components/characters/Bytebeard.tscn" id="12_6gn53"]
+[ext_resource type="PackedScene" uid="uid://dh0mb5kxm1ahd" path="res://components/info_box.tscn" id="13_xh6g8"]
+[ext_resource type="Script" path="res://scripts/info_box.gd" id="13_y5kr0"]
 [ext_resource type="AudioStream" uid="uid://b5mvywu6pyrnm" path="res://audio/pirates.wav" id="14_3xfti"]
 [ext_resource type="AudioStream" uid="uid://bncs577sxaoo" path="res://audio/drunkensailor.wav" id="15_meeey"]
 [ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/169157__joniheinonen__weather-thunder-heavy-thunder-medium-rain-courtyard-echoes-0001.wav" id="15_w7we3"]
+[ext_resource type="Script" path="res://scripts/AnimationHandler.gd" id="20_xsjvk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wtdj6"]
 animations = [{
@@ -307,8 +312,19 @@ hue_variation_min = -0.2
 hue_variation_max = 0.12
 
 [node name="AnimationNode1" type="Node" parent="."]
+script = ExtResource("10_f7g80")
+
+[node name="Bytebeard" parent="AnimationNode1" instance=ExtResource("12_6gn53")]
+z_index = 1
 
 [node name="Dialogue" parent="AnimationNode1" instance=ExtResource("10_fq4m8")]
+offset = Vector2(303, 230)
+transform = Transform2D(1, 0, 0, 1, 303, 230)
+
+[node name="InfoBox3" parent="AnimationNode1" instance=ExtResource("13_xh6g8")]
+offset = Vector2(140, 229)
+transform = Transform2D(1, 0, 0, 1, 140, 229)
+script = ExtResource("13_y5kr0")
 
 [node name="DataHandler" type="Node" parent="."]
 script = ExtResource("9_gn4v6")
@@ -352,3 +368,11 @@ stream = ExtResource("15_w7we3")
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationHandler" type="Node" parent="."]
+script = ExtResource("20_xsjvk")
+
+[connection signal="hide_dialogue" from="AnimationNode1/Bytebeard" to="AnimationNode1/Dialogue" method="_on_bytebeard_hide_dialogue"]
+[connection signal="hide_charles" from="AnimationNode1/Dialogue" to="AnimationNode1/Bytebeard" method="_on_dialogue_hide_charles"]
+[connection signal="hide_info" from="AnimationNode1/Dialogue" to="AnimationNode1/InfoBox3" method="_on_dialogue_hide_info"]
+[connection signal="show_info" from="AnimationNode1/Dialogue" to="AnimationNode1/InfoBox3" method="_on_dialogue_show_info"]

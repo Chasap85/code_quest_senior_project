@@ -92,6 +92,7 @@ position = Vector2(650, 230)
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("14_n3bvs")
 
+[connection signal="hide_dialogue" from="AnimationNode1/Charles" to="AnimationNode1/DialogueBalloon" method="_on_charles_hide_dialogue"]
 [connection signal="hide_charles" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/Charles" method="_on_dialogue_balloon_hide_charles"]
 [connection signal="hide_info" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/InfoBox2" method="_on_dialogue_balloon_hide_info"]
 [connection signal="show_info" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/InfoBox2" method="_on_dialogue_balloon_show_info"]

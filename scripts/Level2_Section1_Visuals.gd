@@ -4,6 +4,7 @@ extends Node
 @onready var infoBox = $InfoBox
 @onready var charles = $Charles
 
+
 func _ready():
 	pass
 

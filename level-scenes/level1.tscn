@@ -116,6 +116,7 @@ position = Vector2(650, 230)
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("18_7kmnn")
 
+[connection signal="hide_dialogue" from="AnimationNode1/Ciea" to="AnimationNode1/DialogueBalloon" method="_on_ciea_hide_dialogue"]
 [connection signal="hide_ciea" from="AnimationNode1/DialogueBalloon" to="AnimationNode1/Ciea" method="_on_dialogue_balloon_hide_ciea"]
 [connection signal="hide_info" from="AnimationNode1/DialogueBalloon" to="." method="_on_dialogue_balloon_hide_info"]
 [connection signal="hide_info" from="AnimationNode1/DialogueBalloon" to="AnimationNode1" method="_on_dialogue_balloon_hide_info"]
