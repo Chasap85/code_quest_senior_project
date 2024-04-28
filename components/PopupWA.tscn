@@ -35,6 +35,10 @@ corner_radius_bottom_left = 15
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul5pg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf8uk"]
+content_margin_left = 20.0
+content_margin_top = 7.0
+content_margin_right = 20.0
+content_margin_bottom = 7.0
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
@@ -116,6 +120,7 @@ offset_right = 323.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_keyqr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ul5pg")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_jf8uk")
