@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://cc6ehmmfm6ygs"]
 
 [ext_resource type="Texture2D" uid="uid://sexgyx1ndbym" path="res://graphics/backgrounds/forest/forest-border.png" id="1_2lpth"]
-[ext_resource type="Texture2D" uid="uid://cs62fqidv7epf" path="res://graphics/backgrounds/forest/forest-entrance.jpg" id="2_favdw"]
+[ext_resource type="Texture2D" uid="uid://c0hg7k2kexovh" path="res://graphics/backgrounds/forest/forest_shack.png" id="1_fm6tp"]
 [ext_resource type="PackedScene" uid="uid://bboel4w886imu" path="res://components/animals/deer.tscn" id="3_7y81p"]
 [ext_resource type="PackedScene" uid="uid://clyxx3yu64mna" path="res://components/animals/fox.tscn" id="4_oqqhs"]
 
 [node name="Level-2-game-view" type="Node2D"]
 
 [node name="Forest-entrance2" type="Sprite2D" parent="."]
-position = Vector2(632, 545.746)
-scale = Vector2(0.405, 0.383214)
-texture = ExtResource("2_favdw")
+position = Vector2(630.66, 546.482)
+scale = Vector2(1.19207, 0.839648)
+texture = ExtResource("1_fm6tp")
 
 [node name="Forest-border" type="Sprite2D" parent="."]
 position = Vector2(633.376, 546.974)
@@ -18,8 +18,8 @@ scale = Vector2(0.955, 0.914687)
 texture = ExtResource("1_2lpth")
 
 [node name="Deer" parent="." instance=ExtResource("3_7y81p")]
-position = Vector2(704, 696)
+position = Vector2(977, 612)
 
 [node name="Fox" parent="." instance=ExtResource("4_oqqhs")]
-position = Vector2(48, 712)
-scale = Vector2(1.4, 1.4)
+position = Vector2(453, 580)
+scale = Vector2(0.45, 0.45)

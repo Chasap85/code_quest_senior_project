@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dh2etdfemek2h"]
+
+[ext_resource type="Texture2D" uid="uid://bgw3gg1ubp0r6" path="res://graphics/characters/travelers/forest-dweller.png" id="1_v786t"]
+[ext_resource type="Texture2D" uid="uid://bn0gcx5tysjsa" path="res://graphics/characters/travelers/forest-dweller-3png.png" id="2_fqwbr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v786t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fqwbr")
+}],
+"loop": true,
+"name": &"charles",
+"speed": 2.0
+}]

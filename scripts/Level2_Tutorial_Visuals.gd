@@ -2,16 +2,15 @@ extends Node
 
 @onready var dialogue = $DialogueBalloon
 @onready var infoBox = $InfoBox
-@onready var red_arrow = $RedArrow
-@onready var sick_bear = $SickBear
+@onready var charles = $Charles
 
 func _ready():
 	pass
 
 func _start_animation():
-	print("anim_1")
-	red_arrow.show()
-	sick_bear.show()
+	charles._start_charles_animation()
+	await charles.animation_looped
+	dialogue.show()
 
 func _on_dialogue_balloon_hide_info():
-	pass
+	infoBox.hide()

@@ -3,12 +3,25 @@ extends Node2D
 @onready var data_handler = $DataHandler
 @onready var animation_handler = $AnimationHandler
 @onready var transition = $TransitionScene
+@onready var animation_node_0 = $AnimationNode0
 @onready var animation_node_1 = $AnimationNode1
 @onready var animation_node_2 = $AnimationNode2
+@onready var animation_node_3 = $AnimationNode3
+@onready var animation_node_4 = $AnimationNode4
+@onready var code_editor_node= $CodeEditorNode
+@onready var code_prompt_node = $CodePrompt
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animation_handler._set_animation_list([animation_node_1, animation_node_2])
+	code_editor_node.hide()
+	code_prompt_node.hide()
+	animation_handler._set_animation_list([
+		animation_node_0, # Tutorial
+		animation_node_1, # Name the bear
+		animation_node_2, # 
+		animation_node_3, #
+		animation_node_4] # 
+	)
 	animation_handler._play_current_animation()
 	data_handler.load_level_data("res://assets/level-data/level_2_data.json")
 

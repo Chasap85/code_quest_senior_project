@@ -1,16 +1,25 @@
 ~ level_2_dial_node
 
-Charles: [[Hi|Hello|Howdy]], brave coder!The Black Hat Wizard Virus is making all the forest animals sick. 
-Charles: You're teaming up with me, the Healer, to fight back!
+Charles: [[Hi|Hello|Howdy]], brave coder! The Black Hat Wizard Virus is making all the forest animals sick. 
+Charles: You're teaming up with me, Charles the Healer, to fight back!
 Charles: Your coding skills with data types are our secret weapon!
-Charles: Let's get to work - the animals are counting on us![wait=3]
-Charles: [do emit("show_info")]Checkout this example.
-Charles: You can name variables and asign a data type to it! [wait=5][do emit("hide_info")]
-Charles: Checkout this example.[do emit("show_info")]
-Charles: Another way to store data inside a variable! [wait=5][do emit("hide_info")]
-Charles: One last example[do emit("show_info")] you should check before moving on!
-Charles: This data type is very Binary!
-Charles: Great! Good luck brave coder! [do emit("hide_info")][do emit("hide_charles")]
+Charles: Let's get to work - the animals are counting on us!
+	[wait=3]
+
+Charles: Here's an example of how to use the integer data type (numbers).
+	[do emit("show_info")] 
+	[wait=10]
+	[do emit("hide_info")]
+Charles: Checkout this example. Use " " to indicate the String type!
+	[do emit("show_info")]
+	[wait=10]
+	[do emit("hide_info")]
+Charles: Here's an example of how to use the Boolean data type (True / False).
+	[do emit("show_info")]
+	[wait=10]
+	[do emit("hide_info")]
+Charles: Great! Good luck brave coder! 
+	[do emit("hide_charles")]
 
 
 => END

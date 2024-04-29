@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://hyeupcwlyocj"]
+
+[ext_resource type="Texture2D" uid="uid://ctmcbykne84kw" path="res://graphics/animals/sick_bear.png" id="1_7khm1"]
+
+[node name="SickBear" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(163.5, 162.5)
+scale = Vector2(0.654, 0.654)
+texture = ExtResource("1_7khm1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/Sprite2D"]
