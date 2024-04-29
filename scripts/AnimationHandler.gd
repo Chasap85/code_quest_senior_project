@@ -9,7 +9,7 @@ var _current_animation: Node
 
 func _ready():
 	_current_animation_index = 0
-	#_hide_code_editor()
+	_hide_code_editor()
 
 func _set_animation_list(_new_animation_list: Array):
 	_animation_list = _new_animation_list

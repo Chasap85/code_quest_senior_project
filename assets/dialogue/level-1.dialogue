@@ -23,6 +23,6 @@ White Wizard: His virus has thrown a few of our robotic citizens into disarray.
 White Wizard: This presents an excellent opportunity to practice your variable identification skills.
 White Wizard: Are you up to the challenge?
 - Yes I am!
-White Wizard: Great! We need your help![do emit("hide_wizard")][do emit("map_popup")]
+White Wizard: Great! We need your help![do emit("hide_wizard")]
 
 => END

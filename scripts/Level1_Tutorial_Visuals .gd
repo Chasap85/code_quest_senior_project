@@ -4,7 +4,6 @@ extends Node
 @onready var infoBox = $InfoBox
 @onready var ciea = $Ciea
 @onready var whiteWizard = $WhiteWizard
-@onready var map = $Map
 
 func _ready():
 	pass

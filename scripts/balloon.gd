@@ -179,3 +179,8 @@ func _on_charles_hide_dialogue():
 func _on_ciea_hide_dialogue():
 	animation_handler._play_current_animation() # Proceed from tutorial
 	hide()
+	
+
+func _on_white_wizard_hide_dialogue():
+	animation_handler._play_current_animation() # Proceed from tutorial
+	hide()

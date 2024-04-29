@@ -7,7 +7,7 @@
 		},
 		{
 			"task_prompt": "Create a variable named 'affected_area' and assign it the name of the area where the malfunctioning robots are located.",
-			"starter_code": "# Write your code here\n\n print(affected_area)",
+			"starter_code": "# Write your code here\n\nprint(affected_area)",
 			"expected_output": "Cyberdale"
 		},
 		{
