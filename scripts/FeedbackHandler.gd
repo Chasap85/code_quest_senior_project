@@ -26,8 +26,8 @@ func _ready():
 # Entry Point from CodeHandler
 func request_feedback(user_code: String) -> void:
 	prompt_data.user_code = user_code
-	_dummy_feedback()
-	# _query_chatgpt() # DISABLED TO NOT USE UP CHATGPT CREDITS - REMOVE COMMENT TO TEST CHATGPT
+	# _dummy_feedback()
+	_query_chatgpt() # DISABLED TO NOT USE UP CHATGPT CREDITS - REMOVE COMMENT TO TEST CHATGPT
 
 func _query_chatgpt():
 	var url = "https://api.openai.com/v1/chat/completions"

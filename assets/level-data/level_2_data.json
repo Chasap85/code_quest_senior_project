@@ -3,7 +3,8 @@
 		{
 			"task_prompt": "A string is a sequence of characters and can contain letters, numbers and even symbols! \n\nCreate a variable 'patient_name' and assign it a string value to name our animal companion!",
 			"starter_code": "# Create your variable here \n\n\nprint(isinstance(patient_name, str))",
-			"expected_output": "True"
+			"expected_output": "True",
+			"solution_prompt": "patient_name variable should be a string"
 		},
 		{
 			"task_prompt": "An int (or integer) is a whole number that can be positive or negative without decimals. \n\nCreate a variable, 'bandaids', and assign it the number of bandaids that Charles has!",
