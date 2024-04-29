@@ -3,7 +3,8 @@
 		{
 			"task_prompt": "Assign the variable, 'malfunctioning_count' to the number of red dots you see on the map.",
 			"starter_code": "malfunctioning_count = \n\n\nprint(malfunctioning_count)",
-			"expected_output": "3"
+			"expected_output": "3",
+			"solution_prompt": "malfunctioning_count variable should be equal to 3."
 		},
 		{
 			"task_prompt": "Create a variable named 'affected_area' and assign it the name of the area where the malfunctioning robots are located.",

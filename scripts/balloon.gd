@@ -167,6 +167,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_bytebeard_hide_dialogue():
+	print("bytebeard_hide")
 	animation_handler._play_current_animation() # Proceed from tutorial
 	hide()
 

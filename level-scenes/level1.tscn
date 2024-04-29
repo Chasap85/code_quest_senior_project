@@ -100,7 +100,6 @@ script = ExtResource("9_pt8l3")
 script = ExtResource("10_lpols")
 
 [node name="Map" parent="AnimationNode1" instance=ExtResource("11_6mxwu")]
-visible = false
 position = Vector2(635, 636)
 
 [node name="Hint" type="RichTextLabel" parent="AnimationNode1"]
@@ -182,9 +181,6 @@ script = ExtResource("15_pqxbm")
 
 [node name="BannerMenu" parent="." instance=ExtResource("21_3eh1w")]
 
-[node name="AnimationHandler" type="Node" parent="."]
-script = ExtResource("18_7kmnn")
-
 [node name="PopupAC" parent="." instance=ExtResource("16_oqmi1")]
 visible = false
 z_index = 1
@@ -192,7 +188,11 @@ position = Vector2(774, 260)
 
 [node name="PopupWA" parent="." instance=ExtResource("16_8se5u")]
 visible = false
+z_index = 1
 position = Vector2(650, 230)
+
+[node name="AnimationHandler" type="Node" parent="."]
+script = ExtResource("18_7kmnn")
 
 [connection signal="hide_dialogue" from="AnimationNode0/Ciea" to="AnimationNode0/DialogueBalloon" method="_on_ciea_hide_dialogue"]
 [connection signal="hide_dialogue" from="AnimationNode0/WhiteWizard" to="AnimationNode0/DialogueBalloon" method="_on_white_wizard_hide_dialogue"]

@@ -31,7 +31,7 @@ func request_feedback(user_code: String) -> void:
 
 func _query_chatgpt():
 	var url = "https://api.openai.com/v1/chat/completions"
-	var api_key = "sk-proj-O9vrhVSAMLeudJlahlDZT3BlbkFJL3CqTiScJD3H1bHQh9u8"
+	var api_key = "sk-proj-Dh7qmd3rRg3ei3O0rFaUT3BlbkFJ4svwFxoSheddsAJR21nd"
 
 	var headers = [
 		"Content-Type: application/json",

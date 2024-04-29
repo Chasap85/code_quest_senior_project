@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://hyeupcwlyocj" path="res://components/animals/sick_bear.tscn" id="10_ba2k2"]
 [ext_resource type="PackedScene" uid="uid://bhighrpknnjks" path="res://components/PopupAC.tscn" id="10_k17mr"]
 [ext_resource type="PackedScene" uid="uid://ft6ngvscr7s6" path="res://components/PopupWA.tscn" id="11_fnd4c"]
-[ext_resource type="Script" path="res://scripts/Level3_Section3_Visuals.gd" id="12_m7nte"]
+[ext_resource type="Script" path="res://scripts/Level2_Section3_Visuals.gd" id="12_m7nte"]
 [ext_resource type="FontFile" uid="uid://dwi57nbifvxom" path="res://assets/fonts/Pangolin-Regular.ttf" id="12_yt1yn"]
-[ext_resource type="Script" path="res://scripts/Level4_Section4_Visuals.gd" id="13_o00i2"]
+[ext_resource type="Script" path="res://scripts/Level2_Section4_Visuals.gd" id="13_o00i2"]
 [ext_resource type="Script" path="res://scripts/AnimationHandler.gd" id="14_n3bvs"]
 [ext_resource type="Script" path="res://scripts/CharlesBandaidSection.gd" id="15_1rsve"]
 [ext_resource type="Texture2D" uid="uid://ctgvqclj6ade1" path="res://assets/level2/bag_5_bandaids.png" id="16_cilow"]
@@ -243,10 +243,12 @@ script = ExtResource("9_p1fyi")
 
 [node name="PopupAC" parent="." instance=ExtResource("10_k17mr")]
 visible = false
+z_index = 1
 position = Vector2(774, 260)
 
 [node name="PopupWA" parent="." instance=ExtResource("11_fnd4c")]
 visible = false
+z_index = 1
 position = Vector2(650, 230)
 
 [node name="AnimationHandler" type="Node" parent="."]

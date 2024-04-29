@@ -67,6 +67,7 @@ func send_code_for_evaluation(new_code: String) -> void:
 		submission_payload["source_code"] = new_code
 		if not new_code.is_empty():
 			# popup_ac.answer_accepted()
+			# feedback_handler.request_feedback(new_code)
 			_send_submission()
 		else:
 			popup_wa.incorrect_submission("Please add code.")
@@ -101,6 +102,7 @@ func _on_submission_result_received(result: int, response_code: int, headers: Pa
 func _process_result(response_body: PackedByteArray) -> void:
 	var json_data: Dictionary = utils.parse_json(response_body)
 	var status_id: StatusID = json_data["status"]["id"]
+	print('json_data: ', json_data)
 	match status_id:
 		StatusID.ACCEPTED:
 			popup_ac.answer_accepted()

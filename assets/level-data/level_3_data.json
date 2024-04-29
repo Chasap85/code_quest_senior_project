@@ -5,7 +5,8 @@
 				"The Kraken has emerged and it's infected with Eviilware!\nIt's super tough, but there's a secret way to beat it. Check out the artillery in The Binary Brigantine's inventory; one of the weapons is the key to victory for Captain Bytebeard! \n\nRules:\n- Bytebeard can defeat the Kraken if the ship has a 'Anti-Virus Cannon Ball' in the inventory.\n\n- Set the variable defeated_kraken to True if Bytebeard can successfully defeat the Kraken.",
 			"starter_code": 
 				"inventory = [\n 'Logic Bomb',\n 'Rum',\n 'Anti-Virus Cannon Ball',\n 'Jar of Dirt'\n]\n\n# Write your code here\nif 'Anti-Virus Cannon Ball' in inventory:\n	defeated_kraken = \n\nprint(defeated_kraken)",
-			"expected_output": "True"
+			"expected_output": "True",
+			"solution_prompt": "defeated_kraken variable should be True."
 		},
 		{
 			"task_prompt": 
