@@ -27,21 +27,6 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlpu8"]
 
-[sub_resource type="Animation" id="Animation_0dpgq"]
-resource_name = "blink_arrow"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_kdld6"]
 resource_name = "arrow_shrink"
 tracks/0/type = "value"
@@ -55,6 +40,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.125495, 0.129345), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0dpgq"]
+resource_name = "blink_arrow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aljfy"]
