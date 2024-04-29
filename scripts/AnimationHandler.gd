@@ -17,7 +17,9 @@ func _set_animation_list(_new_animation_list: Array):
 func _play_current_animation():
 	print("playcurrent", _current_animation_index)
 	if _current_animation_index >= _animation_list.size():
+		# No more animations, level is completed
 		push_warning("Reached the end of animations to play.")
+		get_tree().change_scene_to_file("res://level-scenes/level_selection.tscn")
 		return
 	if _current_animation_index == 1: # Tutorial over, show editor
 		_show_code_editor()
