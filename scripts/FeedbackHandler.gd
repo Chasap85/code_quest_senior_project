@@ -27,11 +27,11 @@ func _ready():
 func request_feedback(user_code: String) -> void:
 	prompt_data.user_code = user_code
 	_dummy_feedback()
-	#_query_chatgpt() # DISABLED TO NOT USE UP CHATGPT CREDITS - REMOVE COMMENT TO TEST CHATGPT
+	# _query_chatgpt() # DISABLED TO NOT USE UP CHATGPT CREDITS - REMOVE COMMENT TO TEST CHATGPT
 
 func _query_chatgpt():
 	var url = "https://api.openai.com/v1/chat/completions"
-	var api_key = "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"
+	var api_key = "sk-proj-O9vrhVSAMLeudJlahlDZT3BlbkFJL3CqTiScJD3H1bHQh9u8"
 
 	var headers = [
 		"Content-Type: application/json",
@@ -41,8 +41,8 @@ func _query_chatgpt():
 	var messages = [
 		{"role": "system", "content": prompt_data.gpt_system_prompt},
 		{"role": "user", "content": "In this coding game, the user is tasked with: " + prompt_data.challenge_description},
-		{"role": "user", "content": "Expected: " + prompt_data.solution_prompt},
-		{"role": "user", "content": "User's Code: " + prompt_data.user_code}
+		{"role": "user", "content": "User's Code: " + prompt_data.user_code},
+		{"role": "user", "content": "Expected: " + prompt_data.solution_prompt}
 	]
 
 	var data = {

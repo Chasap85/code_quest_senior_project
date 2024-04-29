@@ -8,11 +8,11 @@
 		{
 			"task_prompt": "An int (or integer) is a whole number that can be positive or negative without decimals. \n\nCreate a variable, 'bandaids', and assign it the number of bandaids that Charles has!",
 			"starter_code": "# Write your code here\n\n print(bandaids)",
-			"expected_output": "3"
+			"expected_output": "5"
 		},
 		{
 			"task_prompt": "Adjust the bandaids variable by subtracting the number of bandaids used on our patient! \n\nCreate a new variable to store the number used and complete the equation below.",
-			"starter_code": "bandaids = 7\n# Create your variable here\n\nbandaids = bandaids - \n\nprint(bandaids)",
+			"starter_code": "bandaids = 5\n# Create your variable here\n\nbandaids = bandaids - \n\nprint(bandaids)",
 			"expected_output": "4"
 		},
 		{
