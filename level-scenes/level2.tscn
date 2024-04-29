@@ -142,12 +142,18 @@ script = ExtResource("15_1rsve")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="AnimationNode3/CharlesBandaidSectionP2"]
 
+[node name="MedicineBagP2" type="Sprite2D" parent="AnimationNode3"]
+visible = false
+position = Vector2(352, 852)
+rotation = 0.240855
+scale = Vector2(0.61568, 0.61568)
+texture = ExtResource("19_gogbx")
+
 [node name="SickBearP2" parent="AnimationNode3" instance=ExtResource("10_ba2k2")]
 visible = false
 position = Vector2(532, 632)
 
 [node name="Name" type="Label" parent="AnimationNode3/SickBearP2"]
-visible = false
 offset_left = 73.0
 offset_top = -28.0
 offset_right = 326.0
@@ -160,17 +166,11 @@ clip_text = true
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="MedicineBagP2" type="Sprite2D" parent="AnimationNode3"]
-visible = false
-position = Vector2(343, 833)
-rotation = 0.240855
-scale = Vector2(0.61568, 0.61568)
-texture = ExtResource("16_cilow")
-
 [node name="AnimationNode4" type="Node" parent="."]
 script = ExtResource("13_o00i2")
 
 [node name="CharlesBandaidSectionP3" type="AnimatedSprite2D" parent="AnimationNode4"]
+visible = false
 position = Vector2(172, 828)
 scale = Vector2(0.418274, 0.394506)
 sprite_frames = ExtResource("6_fnjr4")
@@ -182,12 +182,14 @@ script = ExtResource("15_1rsve")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="AnimationNode4/CharlesBandaidSectionP3"]
 
 [node name="MedicineBag" type="Sprite2D" parent="AnimationNode4"]
+visible = false
 position = Vector2(343, 833)
 rotation = 0.240855
 scale = Vector2(0.61568, 0.61568)
 texture = ExtResource("19_gogbx")
 
 [node name="HealthyBear" type="Sprite2D" parent="AnimationNode4"]
+visible = false
 position = Vector2(696, 795)
 scale = Vector2(0.6805, 0.6805)
 texture = ExtResource("19_b1unb")

@@ -18,9 +18,9 @@ func _ready():
 	animation_handler._set_animation_list([
 		animation_node_0, # Tutorial
 		animation_node_1, # Name the bear
-		animation_node_2, # 
-		animation_node_3, #
-		animation_node_4] # 
+		animation_node_2, # Count bandaids
+		animation_node_3, # Use bandaids
+		animation_node_4] # Is Bear Healed
 	)
 	animation_handler._play_current_animation()
 	data_handler.load_level_data("res://assets/level-data/level_2_data.json")

@@ -66,8 +66,8 @@ func send_code_for_evaluation(new_code: String) -> void:
 	if not has_run:
 		submission_payload["source_code"] = new_code
 		if not new_code.is_empty():
-			popup_ac.answer_accepted()
-			#_send_submission()
+			# popup_ac.answer_accepted()
+			_send_submission()
 		else:
 			popup_wa.incorrect_submission("Please add code.")
 	else:
