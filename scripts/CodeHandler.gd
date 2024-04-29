@@ -69,7 +69,7 @@ func send_code_for_evaluation(new_code: String) -> void:
 			popup_ac.answer_accepted()
 			#_send_submission()
 		else:
-			popup_wa.incorrect_submission()
+			popup_wa.incorrect_submission("Please add code.")
 	else:
 		popup_ac.answer_accepted()
 

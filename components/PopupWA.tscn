@@ -125,5 +125,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_keyqr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ul5pg")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_jf8uk")
 editable = false
+wrap_mode = 1
 
 [connection signal="pressed" from="PopupContainer/Continue" to="." method="_on_continue_pressed"]
