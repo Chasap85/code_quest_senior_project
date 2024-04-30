@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgd76ob0j58yq" path="res://graphics/level_select_menu/cyber_planet.png" id="4_faw5s"]
 [ext_resource type="Texture2D" uid="uid://ba6eq62ymd15s" path="res://graphics/level_select_menu/pirate_planet.png" id="5_umye8"]
 [ext_resource type="Texture2D" uid="uid://c0pmihunfv01m" path="res://graphics/level_select_menu/gnome_planet.png" id="6_n3355"]
-[ext_resource type="AudioStream" uid="uid://ci3gattywjar5" path="res://audio/74562__jovica__layers-004-2-phase-space-explorer-b2.mp3" id="7_umcn7"]
+[ext_resource type="AudioStream" uid="uid://ci3gattywjar5" path="res://audio/menu_audio/level_select_ominous_music.mp3" id="7_umcn7"]
 
 [node name="LevelSelection" type="Node2D"]
 

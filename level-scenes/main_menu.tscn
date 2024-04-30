@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_o85pd"]
 [ext_resource type="Texture2D" uid="uid://c07svo3m7ipwa" path="res://graphics/backgrounds/main_menu_background.png" id="2_fmivl"]
-[ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/169157__joniheinonen__weather-thunder-heavy-thunder-medium-rain-courtyard-echoes-0001.wav" id="3_vow57"]
-[ext_resource type="AudioStream" uid="uid://dnbw5nfw2w50y" path="res://audio/368707__d_a_g_a_z__bass-pad.wav" id="4_5cbxa"]
+[ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/menu_audio/main_menu/rain.wav" id="3_vow57"]
+[ext_resource type="AudioStream" uid="uid://dnbw5nfw2w50y" path="res://audio/menu_audio/main_menu/main_menu_music.wav" id="4_5cbxa"]
 [ext_resource type="PackedScene" uid="uid://dbl5blkk2ca5w" path="res://components/transition_scene.tscn" id="4_pu7t5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hlyu"]
@@ -87,7 +87,6 @@ stream = ExtResource("4_5cbxa")
 volume_db = 0.724
 autoplay = true
 panning_strength = 1.33
-bus = &"mainmenu"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

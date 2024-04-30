@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menus/options.gd" id="1_kg6b7"]
 [ext_resource type="Texture2D" uid="uid://g2op211b2wrg" path="res://graphics/backgrounds/settings_background.png" id="2_7fxo6"]
-[ext_resource type="AudioStream" uid="uid://bg4sghsmssbft" path="res://audio/380135__yottasounds__computer-keyboard-typing-sounds.wav" id="3_lv5uh"]
+[ext_resource type="AudioStream" uid="uid://bg4sghsmssbft" path="res://audio/menu_audio/options_menu_music.wav" id="3_lv5uh"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
