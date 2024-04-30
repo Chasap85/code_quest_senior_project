@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cdgadr78q5tt8"]
 
-[ext_resource type="Script" path="res://scripts/CodeEditor.gd" id="1_0ne5h"]
+[ext_resource type="Script" path="res://scripts/code_editor/code_editor.gd" id="1_0ne5h"]
 [ext_resource type="Texture2D" uid="uid://ya8n171olf0e" path="res://assets/icons/code.png" id="2_qt2uy"]
 [ext_resource type="Texture2D" uid="uid://ckyaohx7q1tpc" path="res://assets/icons/settings.png" id="3_7h363"]
 [ext_resource type="FontFile" uid="uid://btin1qyeni7jm" path="res://assets/fonts/Cascadia.ttf" id="4_5onvr"]
-[ext_resource type="Script" path="res://scripts/CodeHandler.gd" id="4_52xin"]
-[ext_resource type="Script" path="res://scripts/FeedbackHandler.gd" id="8_4w7d8"]
+[ext_resource type="Script" path="res://scripts/code_editor/code_handler.gd" id="4_52xin"]
+[ext_resource type="Script" path="res://scripts/code_editor/feedback_handler.gd" id="8_4w7d8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lmcm"]
 bg_color = Color(0.2, 0.2, 0.2, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhighrpknnjks"]
 
-[ext_resource type="Script" path="res://scripts/PopupAC.gd" id="1_250ed"]
+[ext_resource type="Script" path="res://scripts/code_evaluation_popups/popup_accepted_answer.gd" id="1_250ed"]
 [ext_resource type="FontFile" uid="uid://dwi57nbifvxom" path="res://assets/fonts/Pangolin-Regular.ttf" id="1_l7rgw"]
 [ext_resource type="FontFile" uid="uid://cilo4gcge8bvm" path="res://assets/fonts/Bungee-Regular.ttf" id="2_ysrl2"]
 

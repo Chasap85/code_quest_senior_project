@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://dfmwwkap8kxti"]
 
-[ext_resource type="Script" path="res://scripts/rocket_ship.gd" id="1_6xwqi"]
+[ext_resource type="Script" path="res://scripts/character_scripts/rocket_ship.gd" id="1_6xwqi"]
 [ext_resource type="Texture2D" uid="uid://bfj4aprj6fwh4" path="res://graphics/characters/travelers/rocket.png" id="2_rtdkm"]
 [ext_resource type="Animation" uid="uid://cot1aoce0ljdm" path="res://components/level_select_rocket_ship/rocket_ship_animations/fly_down.res" id="3_srfke"]
 [ext_resource type="Animation" uid="uid://cl6ctu0a4avqf" path="res://components/level_select_rocket_ship/rocket_ship_animations/fly_left.res" id="4_4sntb"]

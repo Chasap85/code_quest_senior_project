@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cd0k16fcl3wv5"]
 
 [ext_resource type="Texture2D" uid="uid://dlsn1aam8s6g" path="res://graphics/characters/travelers/wizard_right_arm_animation_images/wizard.png" id="1_hiugd"]
-[ext_resource type="Script" path="res://scripts/WhiteWizard.gd" id="1_mibl0"]
+[ext_resource type="Script" path="res://scripts/character_scripts/white_wizard.gd" id="1_mibl0"]
 [ext_resource type="Texture2D" uid="uid://bwea8r34ckna" path="res://graphics/characters/travelers/wizard_right_arm_animation_images/wizard_2.png" id="2_pnmai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_byht6"]

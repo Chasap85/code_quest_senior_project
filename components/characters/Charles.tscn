@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgw3gg1ubp0r6" path="res://graphics/characters/travelers/charles.png" id="1_f2koi"]
 [ext_resource type="Texture2D" uid="uid://bn0gcx5tysjsa" path="res://graphics/characters/travelers/charles_3.png" id="2_yrsiv"]
-[ext_resource type="Script" path="res://scripts/Charles.gd" id="3_4i0us"]
+[ext_resource type="Script" path="res://scripts/character_scripts/charles_tutorial.gd" id="3_4i0us"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_byht6"]
 animations = [{

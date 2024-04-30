@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://3l68eklct1gk"]
 
-[ext_resource type="Script" path="res://scripts/Bytebeard.gd" id="2_p2sdw"]
-[ext_resource type="Texture2D" uid="uid://ckmknw3bl61nr" path="res://graphics/characters/travelers/Bytebeard.png" id="3_s0tmi"]
+[ext_resource type="Script" path="res://scripts/character_scripts/bytebeard.gd" id="2_p2sdw"]
+[ext_resource type="Texture2D" uid="uid://ckmknw3bl61nr" path="res://graphics/characters/travelers/byte_beard.png" id="3_s0tmi"]
 [ext_resource type="Animation" uid="uid://ukgpi6tpdof5" path="res://components/animations/ciea-enters.res" id="4_c7jq1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cn4xd"]

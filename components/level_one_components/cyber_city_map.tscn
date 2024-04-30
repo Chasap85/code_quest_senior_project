@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6mdpascsx806"]
 
-[ext_resource type="Script" path="res://scripts/map.gd" id="1_5mvhq"]
+[ext_resource type="Script" path="res://scripts/level_01_visuals/level_01_challenge_map.gd" id="1_5mvhq"]
 [ext_resource type="Texture2D" uid="uid://beror4dconrjk" path="res://assets/ui/misc/cyber_city_map_image.png" id="1_x23xn"]
 [ext_resource type="Texture2D" uid="uid://dv73qxqm4bhro" path="res://assets/ui/misc/pings.png" id="2_qssio"]
 

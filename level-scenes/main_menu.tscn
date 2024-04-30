@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cau22vjxolrfi"]
 
-[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_o85pd"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_o85pd"]
 [ext_resource type="Texture2D" uid="uid://c07svo3m7ipwa" path="res://graphics/backgrounds/main_menu_background.png" id="2_fmivl"]
 [ext_resource type="AudioStream" uid="uid://cn6vj4ev410qa" path="res://audio/169157__joniheinonen__weather-thunder-heavy-thunder-medium-rain-courtyard-echoes-0001.wav" id="3_vow57"]
 [ext_resource type="AudioStream" uid="uid://dnbw5nfw2w50y" path="res://audio/368707__d_a_g_a_z__bass-pad.wav" id="4_5cbxa"]
