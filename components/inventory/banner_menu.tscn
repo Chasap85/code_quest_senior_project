@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://b24ng4f1d6aka"]
 
-[ext_resource type="Script" path="res://components/inventory/inventory_ui.gd" id="1_uggco"]
+[ext_resource type="Script" path="res://components/inventory/scripts/inventory_ui.gd" id="1_uggco"]
 [ext_resource type="Texture2D" uid="uid://b4icn46nrcjo6" path="res://assets/ui/inventory/inventory_icon.png" id="2_1m0m0"]
 [ext_resource type="Texture2D" uid="uid://btwnti7rgtygi" path="res://assets/ui/inventory/mystery.png" id="2_k3i07"]
-[ext_resource type="Resource" uid="uid://c4ft7opg13osn" path="res://components/inventory/playerInv.tres" id="2_ofp33"]
+[ext_resource type="Resource" uid="uid://c4ft7opg13osn" path="res://components/inventory/player_inventory.tres" id="2_ofp33"]
 [ext_resource type="Texture2D" uid="uid://dfkr8oqspdv3v" path="res://assets/ui/inventory/banner.png" id="2_sgefr"]
 [ext_resource type="Texture2D" uid="uid://bau5wv0214bpp" path="res://assets/ui/inventory/help_icon.png" id="3_6rr6d"]
 
