@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c00b5nexd61yd"]
 
-[ext_resource type="Texture2D" uid="uid://b12k7vi2iemhk" path="res://assets/ui/inventory/invContainer.png" id="1_24wiw"]
+[ext_resource type="Texture2D" uid="uid://b12k7vi2iemhk" path="res://assets/ui/inventory/inventory_container.png" id="1_24wiw"]
 [ext_resource type="PackedScene" uid="uid://dw1rhmdet6uxm" path="res://components/inventory/inventory_slot.tscn" id="2_yumac"]
 
 [node name="InventoryUI" type="Control"]

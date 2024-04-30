@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/balloon.gd" id="1_bx64p"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://bgboriioii37k" path="res://assets/ui/bubbles/response.png" id="2_ufj4k"]
+[ext_resource type="Texture2D" uid="uid://bgboriioii37k" path="res://assets/ui/bubbles/response_balloon.png" id="2_ufj4k"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://cuk5cykggn7lq" path="res://assets/ui/bubbles/balloon.png" id="3_syklg"]
+[ext_resource type="Texture2D" uid="uid://cuk5cykggn7lq" path="res://assets/ui/bubbles/dialogue_balloon.png" id="3_syklg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0b70"]
 

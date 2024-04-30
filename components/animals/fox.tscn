@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://clyxx3yu64mna"]
 
 [ext_resource type="Script" path="res://scripts/fox.gd" id="1_cpqfy"]
-[ext_resource type="Texture2D" uid="uid://clkli1b1u0muf" path="res://graphics/animals/fox-1.png" id="2_ofcal"]
-[ext_resource type="Texture2D" uid="uid://csc35omtk835f" path="res://graphics/animals/fox-2.png" id="3_bh0gh"]
+[ext_resource type="Texture2D" uid="uid://clkli1b1u0muf" path="res://graphics/animals/fox_1.png" id="2_ofcal"]
+[ext_resource type="Texture2D" uid="uid://csc35omtk835f" path="res://graphics/animals/fox_2.png" id="3_bh0gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4ri5"]
 size = Vector2(122, 174)

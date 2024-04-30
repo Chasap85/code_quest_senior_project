@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxb2pihen2v8n"]
 
-[ext_resource type="Texture2D" uid="uid://brcutabaecl7b" path="res://graphics/characters/travelers/ciea/ceia-animation/ceia-closeup.png" id="1_hmmun"]
-[ext_resource type="Texture2D" uid="uid://c2ktmnhiwafqt" path="res://graphics/characters/travelers/ciea/ceia-animation/ceia-closed-eyes.png" id="2_g3yxv"]
+[ext_resource type="Texture2D" uid="uid://brcutabaecl7b" path="res://graphics/characters/travelers/ciea/ciea_animation/ciea_close_up.png" id="1_hmmun"]
+[ext_resource type="Texture2D" uid="uid://c2ktmnhiwafqt" path="res://graphics/characters/travelers/ciea/ciea_animation/ciea_closed_eyes.png" id="2_g3yxv"]
 [ext_resource type="Script" path="res://scripts/ciea.gd" id="3_xdvk1"]
 [ext_resource type="Animation" uid="uid://ukgpi6tpdof5" path="res://components/animations/ciea-enters.res" id="4_6bg16"]
 

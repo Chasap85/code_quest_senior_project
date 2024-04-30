@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dra805efmkmeu"]
 
 [ext_resource type="Script" path="res://components/inventory/scripts/inventory_item.gd" id="1_mahli"]
-[ext_resource type="Texture2D" uid="uid://c41mlefr6g7jr" path="res://assets/ui/misc/anti-virus-blade.png" id="2_sga6v"]
+[ext_resource type="Texture2D" uid="uid://c41mlefr6g7jr" path="res://assets/ui/inventory/anti_virus_blade.png" id="2_sga6v"]
 
 [resource]
 script = ExtResource("1_mahli")
