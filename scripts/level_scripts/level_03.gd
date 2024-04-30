@@ -30,7 +30,7 @@ func _process(delta):
 	pass
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://level-scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://level-scenes/main_menu.tscn")
 
 func _on_Timer_timeout():
 	# Check if audio stream player is not already playing

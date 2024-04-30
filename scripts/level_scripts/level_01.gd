@@ -26,7 +26,7 @@ func _ready():
 	data_handler.load_level_data("res://assets/level-data/level_1_data.json")
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://level-scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://level-scenes/main_menu.tscn")
 
 # next level
 	# _transition.transition_to("Path to next scene")
