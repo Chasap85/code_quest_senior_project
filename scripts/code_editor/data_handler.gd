@@ -2,7 +2,7 @@ extends Node
 
 const Utils = preload("res://scripts/utils.gd")
 
-@onready var challenge_description_component = $"../CodePrompt"
+@onready var challenge_description_component = $"../ChallengeDescription"
 @onready var code_editor_component = $"../CodeEditorNode"
 @onready var feedback_handler = $"../CodeEditorNode/EditorContainer/CodeHandler/FeedbackHandler"
 

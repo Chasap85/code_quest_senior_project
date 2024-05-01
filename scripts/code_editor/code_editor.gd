@@ -24,8 +24,8 @@ const COLOR_SETTINGS: Dictionary = {
 #region Reference Variables (Nodes)
 @onready var data_handler: Node = $"../DataHandler"
 @onready var code_text_box: CodeEdit = $EditorContainer/CodeEdit
-@onready var code_handler: Node = $EditorContainer/CodeHandler
-@onready var feedback_handler: Node = $EditorContainer/CodeHandler/FeedbackHandler
+@onready var code_handler: Node = $EditorContainer/CodeVerifier
+@onready var feedback_handler: Node = $EditorContainer/CodeVerifier/FeedbackHandler
 #endregion
 
 var challenge_data: Utils.ChallengeData

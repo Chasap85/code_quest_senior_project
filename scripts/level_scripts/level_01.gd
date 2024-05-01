@@ -2,9 +2,9 @@ extends Node2D
 
 @onready var codeEdit = $CodeEditorNode
 @onready var codePrompt = $CodePrompt
-@onready var animation_handler = $AnimationHandler
+@onready var visuals_handler = $VisualsHandler
 @onready var data_handler = $DataHandler
-@onready var animation_node_0 = $AnimationNode0
+@onready var tutorial_node = $Tutorial
 @onready var animation_node_1 = $AnimationNode1
 @onready var animation_node_2 = $AnimationNode2
 @onready var animation_node_3 = $AnimationNode3
@@ -16,13 +16,13 @@ signal start_challenge
 signal map_popup
 
 func _ready():
-	animation_handler._set_animation_list([
-		animation_node_0, 
-		animation_node_1, 
-		animation_node_2,
-		animation_node_3]
+	visuals_handler._set_animation_list([
+		tutorial_node, 
+		animation_node_1, # Count red dots
+		animation_node_2, # Assign variable to city name
+		animation_node_3] # Percent Corrupted Calculation
 	)
-	animation_handler._play_current_animation()
+	visuals_handler._play_current_animation()
 	data_handler.load_level_data("res://assets/level-data/level_1_data.json")
 
 func _on_back_pressed():

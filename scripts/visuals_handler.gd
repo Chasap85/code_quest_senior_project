@@ -1,7 +1,7 @@
 extends Node
 
 @onready var code_editor_node = get_node("../CodeEditorNode")
-@onready var code_prompt_node = get_node("../CodePrompt")
+@onready var challenge_description_node = get_node("../ChallengeDescription")
 
 var _animation_list: Array
 var _current_animation_index: int
@@ -32,8 +32,8 @@ func _destroy_active_animation():
 
 func _hide_code_editor():
 	code_editor_node.hide()
-	code_prompt_node.hide()
+	challenge_description_node.hide()
 
 func _show_code_editor():
 	code_editor_node.show()
-	code_prompt_node.show()
+	challenge_description_node.show()

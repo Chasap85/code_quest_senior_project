@@ -12,8 +12,8 @@ const SKIP_ACTION = &"ui_cancel"
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
-# Access AnimationHandler to proceed from Tutorial
-@onready var animation_handler = get_node("../../AnimationHandler")
+# Access VisualsHander to proceed from Tutorial
+@onready var visuals_handler = get_node("../../VisualsHandler")
 
 ## dialogue signals
 signal show_info
@@ -91,7 +91,7 @@ var dialogue_line: DialogueLine:
 
 func _ready() -> void:
 	#balloon.hide()
-	print(animation_handler.name)
+	print(visuals_handler.name)
 	var arr = []
 	var scene = get_tree().current_scene.name
 	match scene:
@@ -168,20 +168,20 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_bytebeard_hide_dialogue():
 	print("bytebeard_hide")
-	animation_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler._play_current_animation() # Proceed from tutorial
 	hide()
 
 
 func _on_charles_hide_dialogue():
-	animation_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler._play_current_animation() # Proceed from tutorial
 	hide()
 
 
 func _on_ciea_hide_dialogue():
-	animation_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler._play_current_animation() # Proceed from tutorial
 	hide()
 	
 
 func _on_white_wizard_hide_dialogue():
-	animation_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler._play_current_animation() # Proceed from tutorial
 	hide()
