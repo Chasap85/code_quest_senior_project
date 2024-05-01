@@ -24,7 +24,7 @@ const COLOR_SETTINGS: Dictionary = {
 #region Reference Variables (Nodes)
 @onready var data_handler: Node = $"../DataHandler"
 @onready var code_text_box: CodeEdit = $EditorContainer/CodeEdit
-@onready var code_handler: Node = $EditorContainer/CodeVerifier
+@onready var code_verifier: Node = $EditorContainer/CodeVerifier
 @onready var feedback_handler: Node = $EditorContainer/CodeVerifier/FeedbackHandler
 #endregion
 
@@ -35,12 +35,12 @@ func _ready() -> void:
 	challenge_data = Utils.ChallengeData.new()
 
 func _on_submit_pressed() -> void:
-	code_handler.send_code_for_evaluation(code_text_box.text)
+	code_verifier.send_code_for_evaluation(code_text_box.text)
 	
 func update_section_data(challenge_data: Utils.ChallengeData):
 	challenge_data = challenge_data
 	code_text_box.set_text(challenge_data.starter_code)
-	code_handler.set_expected_output(challenge_data.expected_output)
+	code_verifier.set_expected_output(challenge_data.expected_output)
 	feedback_handler.update_data(challenge_data)
 
 #region Code Editor Text Box Setup
