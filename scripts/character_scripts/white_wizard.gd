@@ -1,11 +1,8 @@
 extends AnimatedSprite2D
 
-# for animation player
+signal hide_dialogue
 @onready var animate := $WizardAnim
 
-signal hide_dialogue
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
 
@@ -22,4 +19,3 @@ func _on_dialogue_balloon_hide_wizard():
 	animate.play_backwards("ciea-enters")
 	emit_signal("hide_dialogue")
 	
-

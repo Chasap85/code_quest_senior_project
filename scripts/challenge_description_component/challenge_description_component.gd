@@ -2,7 +2,6 @@ extends Control
 
 @onready var text_box = $TextEdit
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
