@@ -165,23 +165,18 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-
 func _on_bytebeard_hide_dialogue():
-	print("bytebeard_hide")
-	visuals_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler.play_current_animation() # Proceed from tutorial
 	hide()
-
 
 func _on_charles_hide_dialogue():
-	visuals_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler.play_current_animation() # Proceed from tutorial
 	hide()
-
 
 func _on_ciea_hide_dialogue():
-	visuals_handler._play_current_animation() # Proceed from tutorial
+	visuals_handler.play_current_animation() # Proceed from tutorial
 	hide()
 	
-
 func _on_white_wizard_hide_dialogue():
-	visuals_handler._play_current_animation() # Proceed from tutorial
-	hide()
+	visuals_handler.play_current_animation() # Proceed from tutorial
+	hide() 

@@ -17,13 +17,13 @@ const AUDIO_DELAY = 1.0
 #endregion
 
 func _ready():
-	visuals_handler._set_animation_list([
+	visuals_handler.set_animation_list([
 		tutorial_node,
 		animation_node_1, # Can Kraken be defeated (inventory check)
 		animation_node_2, # Defend and Attack back
 		animation_node_3] # Defend and final blow
 		)
-	visuals_handler._play_current_animation()
+	visuals_handler.play_current_animation()
 	data_handler.load_level_data(LEVEL_DATA_PATH)
 	$Timer.start(AUDIO_DELAY)
 

@@ -19,14 +19,14 @@ const LEVEL_DATA_PATH = "res://assets/level-data/level_2_data.json"
 #endregion
 
 func _ready():
-	visuals_handler._set_animation_list([
+	visuals_handler.set_animation_list([
 		tutorial_node,
 		animation_node_1, # Name the bear
 		animation_node_2, # Count bandaids
 		animation_node_3, # Use bandaids
 		animation_node_4] # Is Bear Healed
 	)
-	visuals_handler._play_current_animation()
+	visuals_handler.play_current_animation()
 	data_handler.load_level_data(LEVEL_DATA_PATH)
 	
 #region Signals

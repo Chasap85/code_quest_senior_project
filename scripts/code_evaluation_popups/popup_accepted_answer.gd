@@ -11,6 +11,6 @@ func answer_accepted():
 
 func _on_continue_pressed():
 	hide()
-	visuals_handler._destroy_active_animation()
-	visuals_handler._play_current_animation()
+	visuals_handler.destroy_active_animation()
+	visuals_handler.play_current_animation()
 	data_handler.load_next_section()

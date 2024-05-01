@@ -19,13 +19,13 @@ const LEVEL_DATA_PATH = "res://assets/level-data/level_1_data.json"
 #endregion
 
 func _ready():
-	visuals_handler._set_animation_list([
+	visuals_handler.set_animation_list([
 		tutorial_node, 
 		animation_node_1, # Count red dots
 		animation_node_2, # Assign variable to city name
 		animation_node_3] # Percent Corrupted Calculation
 	)
-	visuals_handler._play_current_animation()
+	visuals_handler.play_current_animation()
 	data_handler.load_level_data(LEVEL_DATA_PATH)
 
 #region Signals
