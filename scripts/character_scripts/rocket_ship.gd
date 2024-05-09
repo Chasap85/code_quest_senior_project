@@ -5,8 +5,8 @@ extends CharacterBody2D
 var last_input_direction = Vector2.ZERO
 
 const TARGET_POSITIONS = [
-	{"position": Vector2(387, 629), "level": "res://level-scenes/level_01.tscn"},
-	{"position": Vector2(566, 200), "level": "res://level-scenes/level_02.tscn"},
+	{"position": Vector2(305, 540), "level": "res://level-scenes/level_01.tscn"},
+	{"position": Vector2(616, 200), "level": "res://level-scenes/level_02.tscn"},
 	{"position": Vector2(1110, 200), "level": "res://level-scenes/level_03.tscn"}
 ]
 
