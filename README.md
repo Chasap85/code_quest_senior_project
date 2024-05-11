@@ -53,7 +53,11 @@ This component receives the user's code and expected output from the parent Code
 
 ### **FeedbackHandler**
 
-Upon an incorrect answer, this component will receive the user's code from the CodeHandler and pair it with a ChatGPT system prompt (stored in `assets/level-data/gpt_system_prompt.txt`), and the solution prompt received from the parent CodeEditor. All of this information is then used to query ChatGPT using OpenAI's API for actionable feedback that the user can refine their solution with. A popup with the feedback is then triggered allowing the user to make their succeeding attempts.
+Upon an incorrect answer, this component will receive the user's code from the CodeHandler and pair it with a ChatGPT system prompt (stored in `assets/level-data/gpt_system_prompt.txt`), and the solution prompt received from the parent CodeEditor. All of this information is then used to query ChatGPT using OpenAI's API for actionable feedback that the user can refine their solution with. A popup with the feedback is then triggered allowing the user to make their succeeding attempts.\
+**IMPORTANT**\
+When you clone this repo, to use be able to receive feedback on incorrect user code you must generate a new ChatGPT key with OpenAI. The uploaded key is invalidated whenever it is detected on Github.
+To create a new key, visit `https://platform.openai.com/usage` log in, go to `API keys` and then `Create new secret key`. 
+You can then put the key into the `api_key` variable under the function `_query_chatgpt`
 
 **Author(s):** Steven Taborda, Chase Little, Cash Snell, Robert Stolworthy  
 **Last Updated:** May 9, 2024 
